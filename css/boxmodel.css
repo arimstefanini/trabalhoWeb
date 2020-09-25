@@ -8,7 +8,7 @@
 .menu {
     float: top;
     padding: 20px;
-    border-bottom: black solid;
+    border-bottom: 1px solid black;
 }
 
 #menu-pages{
@@ -45,7 +45,7 @@ main{
 }
 
 main-centro{
-    float: center;
+    float: justify;
     max-width: 50%;
 }
 
@@ -53,17 +53,11 @@ main-centro{
 main form h2 {
     font-size: 25px;
     margin: 10px;
+    
 }
 
 form{
     margin: 10%;
-}
-
-.text-field{
-    border: solid 3px;
-    margin: 5px;
-    width: 300px;
-    height: 25px;
 }
 
 .text-input{
@@ -73,13 +67,12 @@ form{
 }
 
 .button{
-
     background-color: #99d1f1;
     border-color: #111111;
     border-radius: 10px;
     font-weight: bold;
     margin: 10px;
-    padding: 5px 20px;
+    padding: 5px 20px;    
 }
 
 aside{
@@ -96,6 +89,7 @@ section{
     font-size: 25px;
     text-align: center;
     margin: 5px;
+
 }
 
 .post img{
@@ -118,10 +112,10 @@ section{
 }
 
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     min-width: 100%;
-    border-top: black solid;
+    border-top:1px solid black;
     clear: both;
     overflow: no-display;
 }
