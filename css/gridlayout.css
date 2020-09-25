@@ -1,13 +1,48 @@
-/* reset basico */
-*{
-	margin: 0;
-	padding: 0;
+* {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;	     
-	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background: #f3f3f3;
+}
+
+/* Navegador */
+.menu {
+    float: top;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.menu-item {
+	float: left;
+	
+}
+
+.menu-item::after {
+    content: " | ";
+}
+
+.menu-item:last-child::after {
+    content: none;
+}
+
+.menu-item a {
+    padding: 5px 10px;
+    text-decoration: none;
+    max-width: 5%;
+    
 }
 
 /* conteiner */
+
 .container {
 	width: 100%;
 	margin-left: auto;
@@ -74,12 +109,21 @@
 	}
 }
 
-.teste{
-	background: gray;
-	padding: 5px;
+.menu-item{
+
+	padding: 1px;
 	text-align: center;
 	margin: 2px 0;
-	color: #fff;	
+	
+}
+
+.menu-login{
+	float: right;
+	
+	padding: 1px;
+	text-align: center;
+	margin: 2px 0;
+	
 }
 
 .big{

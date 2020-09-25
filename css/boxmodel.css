@@ -5,6 +5,7 @@
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
+/* Navegador */
 .menu {
     float: top;
     padding: 20px;
@@ -38,10 +39,11 @@
     color: black;
 }
 
+/* Conteudo */
+
 main{
     float: left;
-    max-width: 50%;
- 
+    max-width: 50%; 
 }
 
 main-centro{
@@ -64,6 +66,7 @@ form{
     font-weight: bolder;
     margin: 10px;
     font-size: 20px;
+    border-bottom: 1px solid black;
 }
 
 .button{
