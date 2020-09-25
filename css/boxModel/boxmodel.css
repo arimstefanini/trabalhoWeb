@@ -47,7 +47,6 @@ main{
 main-centro{
     float: justify;
     max-width: 50%;
-    border-bottom: 5px solid red;
 }
 
 
@@ -90,7 +89,6 @@ section{
     font-size: 25px;
     text-align: center;
     margin: 5px;
-    border-bottom: 1px solid black;
 
 }
 
