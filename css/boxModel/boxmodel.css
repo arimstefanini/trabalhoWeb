@@ -1,241 +1,93 @@
-/*Limpar formatações padrão*/
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-}
-
-body {
-    font-size: 16px;
+    overflow:hidden;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    background: #f3f3f3;
 }
 
 .menu {
     float: top;
+    padding: 20px;
     border-bottom: black solid;
 }
 
-#menu-pages, #menu-pages ul {
+#menu-pages{
     float: left;
 }
 
-#menu-login, #menu-login ul {
+#menu-login {
     float: right;
 }
 
 .menu-item {
-    padding: 10px;
     float: left;
 }
 
-#navegacao {
-    background: #fff;
-    border-bottom: 1px solid #d8d8d8;
-    height: 45px;
-    position: fixed;
-    width: 100%;
-    top: 0;
+.menu-item::after {
+    content: " | ";
 }
 
-#area {
-    width: 720px;
-    margin: 0 auto;
+.menu-item:last-child::after {
+    content: none;
 }
 
-#area-principal {
-    width: 1200px;
-    height: 555px;
-    margin: 55px auto 10px auto;
-
-}
-
-#logo {
-    float: left;
-}
-
-#menu {
-    float: right;
-    padding: 10px 0;
-}
-
-#postagem-a {
-    background: #fff;
-    padding: 15px;
-    width: 500px;
-    height: 240px;
-    margin-bottom: 10px;
-
-}
-
-#postagem-b {
-    position: relative;
-    background: #fff;
-    padding: 15px;
-    width: 500px;
-    height: 240px;
-    margin: 10px auto;
-    bottom: 565px;
-    left: 310px;
-}
-
-#postagem {
-    background: #fff;
-    padding: 15px;
-    width: 800px;
-    height: 1000px;
-    margin: 1px auto;
-}
-
-img {
-    width: 245px;
-}
-
-h2 {
-    text-align: center;
-    color: #b9c941;
-    font-size: 30px;
-}
-
-#area-principal p {
-    font-size: 22px;
-}
-
-footer {
-    text-align: left;
-    padding: 15px;
-    background-color: white;
+.menu-item a {
+    padding: 5px 10px;
+    text-decoration: none;
+    max-width: 5%;
     color: black;
 }
 
-/*********Formatação do navibar************/
-#menu a {
-    text-decoration: none;
-    padding: 5px 10px;
+main{
+    float: left;
+    max-width: 50%;
 }
 
-/*Links não visitados*/
-a:link {
-    color: #9bf806;
+aside{
+    float: right;
+    max-width: 50%;
 }
 
-/*Links vistados*/
-a:visited {
-    color: #838383;
-}
-
-/*Links hover*/
-a:hover {
-    color: #fff;
-    background: #b9c941;
-}
-
-/*Links active*/
-a:active {
-    color: #535353;
-}
-
-
-/*Classes*/
-.verde {
-    color: #b9c941;
-}
-
-/*********SideBar************/
-
-.sidebar {
-    height: 100%;
-    width: 0;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition: 0.5s;
-}
-
-.sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    color: #f1f1f1;
-}
-
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.openbtn {
+section{
     font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
-    border: none;
+    margin: 5%;
 }
 
-.openbtn:hover {
-    background-color: #444;
+.title{
+    font-size: 25px;
+    text-align: center;
+    margin: 5px;
 }
 
-#main {
-    transition: margin-left .5s; /* If you want a transition effect */
+.post img{
+    max-height: 50%;
+    max-width: 50%;
+}
+
+#post2{
+    text-align: center;
+}
+
+.locale address, .commentary article{
+    font-style: normal;
+    padding: 10px;
+}
+
+.local-city{
+    font-style: normal;
+    font-weight: bolder;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+    border-top: black solid;
+    clear: both;
+    overflow: no-display;
+}
+
+footer p{
     padding: 20px;
+    font-size: 12px;
 }
-
-@media screen and (max-height: 450px) {
-    .sidebar {
-        padding-top: 15px;
-    }
-
-    .sidebar a {
-        font-size: 18px;
-    }
-}
-
-/*********Login************/
-
-.cadastro {
-    text-align: initial;
-    width: 500px;
-    margin: 55px auto 10px auto;
-}
-
-form {
-    border: 3px solid #f1f1f1;
-}
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
