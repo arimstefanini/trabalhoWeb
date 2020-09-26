@@ -45,6 +45,19 @@ body {
 	*display: inline;
 }
 
+.col-without {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	min-height: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	width: 100%;
+	margin-right: -4px;
+	*zoom: 1;
+	
+}
+
 /* duas colunas*/
 @media (min-width: 480px){
 	.col-2{
@@ -68,6 +81,9 @@ body {
 		width:40%;
 	}
 }
+
+
+
 
 /* --- menu -- */
 /* linha */
@@ -122,7 +138,7 @@ body {
 /* --- conteudo -- */
 .conteudo {
     padding: 1px;
-    
+
 }
 	.conteudo:before,
 	.conteudo:after{
@@ -189,8 +205,7 @@ footer p{
 /*-- Tela Login --*/
 .acesso {
     float: center;
-    max-width: 100%;
-    
+	max-width: 100%;
 }
 	.acesso:before,
 	.acesso:after{
@@ -201,31 +216,25 @@ footer p{
 	.acesso:after{
 		clear: both;
 	}
-
-main-centro{
-	float: justify;
-	max-width: 50%;
 	
+form{
+	margin: 8%;
+	margin-left: 7%;
+	padding: 5%;
 }
 
-main-centro form h2 {
+main-centro h2 {
+
     font-size: 25px;
 	margin: 10px;
-	margin: 0 20px 0 300px;
 	
-}
-
-form{
-	margin: 10%;
-	margin: 70px 0px 90px 0px;
-	padding: 100px;
 }
 
 .text-input{
     font-weight: bolder;
     margin: 10px;
-	font-size: 20px;
-	margin:0 20px 0 300px;
+    font-size: 20px;
+    
 }
 
 .button{
@@ -234,15 +243,15 @@ form{
     border-color: #111111;
     border-radius: 20px;
     font-weight: bold;
-	margin: 20px 300px;
-	
+    margin: 20px;
+    padding: 10px 25px;  
+    right: 1px;  
 }
 
 input[type="text"]{ 
     padding: 10px ; 
    
 }
-
 input[type="password"]{ 
     padding: 10px ; 
    
