@@ -15,7 +15,7 @@ body {
 	background: #f3f3f3;
 }
 
-/* conteiner */
+/* --- conteiner -- */
 
 .container {
 	width: 100%;
@@ -32,22 +32,7 @@ body {
 		}
 	}
 
-/* linha */
-.row {
-	margin-left: -5px;
-	margin-right: -5;
-}
-	.row:before,
-	.row:after{
-		content: "";
-		display: table;
-	}
-
-	.row:after{
-		clear: both;
-	}
-
-/* coluna */
+/* GridLayout */
 .col {
 	display: inline-block;
 	vertical-align: top;
@@ -84,6 +69,23 @@ body {
 	}
 }
 
+/* --- menu -- */
+/* linha */
+.menu {
+	margin-left: -5px;
+	margin-right: -5;
+}
+	.menu:before,
+	.menu:after{
+		content: "";
+		display: table;
+	}
+
+	.menu:after{
+		clear: both;
+	}
+
+
 .menu-item{
 	padding: 8px;
 	text-align: center;
@@ -114,6 +116,71 @@ body {
     padding: 5px 10px;
     text-decoration: none;
 	max-width: 5%;
-	color: black;
+	color: black;  
+}
+
+/* --- conteudo -- */
+.conteudo {
+    padding: 1px;
     
+}
+	.conteudo:before,
+	.conteudo:after{
+		content: "";
+		display: table;
+	}
+
+	.conteudo:after{
+		clear: both;
+	}
+
+aside{
+    float: right;
+    max-width: 50%;
+}
+
+section{
+    font-size: 20px;
+    margin: 5%;
+}
+
+
+.title{
+    font-size: 25px;
+    text-align: center;
+    margin: 5px;
+
+}
+
+.post img{
+    max-height: 50%;
+    max-width: 50%;
+}
+
+#post2{
+    text-align: center;
+}
+
+.locale address, .commentary article{
+    font-style: normal;
+    padding: 10px;
+}
+
+.local-city{
+    font-style: normal;
+    font-weight: bolder;
+}
+
+/*-- Footer --*/
+
+footer{
+    margin: -10px;
+    min-width: 100%;
+    clear: both;
+    overflow: no-display;
+}
+
+footer p{
+    padding: 20px;
+    font-size: 12px;
 }
