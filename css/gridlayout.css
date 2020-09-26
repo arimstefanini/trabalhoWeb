@@ -184,3 +184,66 @@ footer p{
     padding: 20px;
     font-size: 12px;
 }
+
+
+/*-- Tela Login --*/
+.acesso {
+    float: center;
+    max-width: 100%;
+    
+}
+	.acesso:before,
+	.acesso:after{
+		content: "";
+		display: table;
+	}
+
+	.acesso:after{
+		clear: both;
+	}
+
+main-centro{
+	float: justify;
+	max-width: 50%;
+	
+}
+
+main-centro form h2 {
+    font-size: 25px;
+	margin: 10px;
+	margin: 0 20px 0 300px;
+	
+}
+
+form{
+	margin: 10%;
+	margin: 70px 0px 90px 0px;
+	padding: 100px;
+}
+
+.text-input{
+    font-weight: bolder;
+    margin: 10px;
+	font-size: 20px;
+	margin:0 20px 0 300px;
+}
+
+.button{
+    position: relative;
+    background-color: #99d1f1;
+    border-color: #111111;
+    border-radius: 20px;
+    font-weight: bold;
+	margin: 20px 300px;
+	
+}
+
+input[type="text"]{ 
+    padding: 10px ; 
+   
+}
+
+input[type="password"]{ 
+    padding: 10px ; 
+   
+}

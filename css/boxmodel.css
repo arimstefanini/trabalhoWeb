@@ -100,25 +100,20 @@ footer{
 }
 
 footer p{
-    padding: 20px;
+    padding: 10px 20px;
     font-size: 12px;
 }
 
-/*-- Tela cadastro --*/
+/*-- Tela Login --*/
 main-centro{
     float: justify;
     max-width: 50%;
 }
 
-.informacao{
-    padding: 80px;
+.acesso{
+    padding: 50px;
     text-align: center;
 }
-
-div.b {
-    font-size: large;
-}
-
 
 main form h2 {
     font-size: 25px;
@@ -134,15 +129,25 @@ form{
     font-weight: bolder;
     margin: 10px;
     font-size: 20px;
-    border-bottom: 1px solid black;
+    
 }
 
 .button{
+    position: relative;
     background-color: #99d1f1;
     border-color: #111111;
-    border-radius: 10px;
+    border-radius: 20px;
     font-weight: bold;
-    margin: 10px;
-    padding: 5px 20px;    
+    margin: 20px;
+    padding: 10px 25px;  
+    right: 190px;  
 }
 
+input[type="text"]{ 
+    padding: 10px ; 
+   
+}
+input[type="password"]{ 
+    padding: 10px ; 
+   
+}
