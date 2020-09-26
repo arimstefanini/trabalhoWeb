@@ -5,51 +5,68 @@
 <head>
     <title>Sparkling Water Hostel Aplication</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="css/boxmodel.css"/>
+    <link rel="stylesheet" type="text/css" href="css/gridlayout.css"/>
 
 </head>
 
     <body>
-        <header>
-            <!-- menus -->
-            <div class="menu" >
-                <!-- menu do lado esquerdo -->
-                <nav id="menu-pages">
-                    <ul>
-                        <li class="menu-item"><a href="index.html">Home</a></li>
-                        <li class="menu-item"><a href="#">Customers</a></li>
-                        <li class="menu-item"><a href="#">Rooms</a></li>
-                        <li class="menu-item"><a href="#">Reservations</a></li>
-                        <li class="menu-item"><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-                <!-- menu do lado direito -->
-                <nav id="menu-login">
-                    <ul>
-                        <li class="menu-item"><a href="login.html">Login</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+
+        <!-- cabecalho da pagina -->
+		<header  class="container">
+			<!-- navegador -->
+			<nav class="menu" >
+				<!-- menu do lado esquerdo -->
+				<nav class="col col-2" id="menu-pages" >
+					
+						<ul class="menu-item">
+							<li class="menu-item"><a href="index.html">Home</a></li>
+							<li class="menu-item"><a href="#">Customers</a></li>
+							<li class="menu-item"><a href="#">Rooms</a></li>
+							<li class="menu-item"><a href="#">Reservations</a></li>
+							<li class="menu-item"><a href="#">Contact</a></li>
+						</ul>
+					
+				</nav>
+				<!-- menu do lado direito -->
+				<nav class="col col-2" id="menu-login"  >
+					
+					<ul class="menu-login">
+						<li class="menu-item"><a href="login.html">Sign in</a></li>
+					</ul>
+				
+				</nav>
+			</nav>
+		</header>
         
          <!-- conteudo -->
-        <main-centro class="centro">
-            <form method="post" action="" style=" text-align: center">
-                <h2>Hostel Sparkling Water - Login Employee</h2></br>
-                <p text-align="justify">
-                    <label class="text-input" for="username">Username</label>
-                    
-                    <input id="name_cad" name="name_cad" required="required" type="text" placeholder="name" size=50 />
-                </p>
-                <p>
-                    <label class="text-input" for="password">Password</label>
-                    
-                    <input id="password" name="password" required="required" type="password" placeholder="sua senha" size=50  />
-                </p>
-                <p> <input class="button" type="submit" value="Sign in"/> </p>
-            </form>
-        </main-centro>
-        
+         <div class="container">
+			<div class="acesso">
+                
+                <main-centro >
+                    <form method="post" action="" >
+                        <h2>Hostel Sparkling Water - Login Employee</h2></br>
+                        <p text-align="justify">
+                            <label class="text-input" for="username">Username</label>
+                            
+                            <input id="name_cad" name="name_cad" 
+                                    required="required" type="text" 
+                                        placeholder="Username" size=48 />
+                        </p></br>
+                        <p>
+                            <label class="text-input" for="password">Password &nbsp;</label>
+                            
+                            <input id="password" name="password" required="required" type="password" placeholder="Password" size=48  />
+                        </p>
+
+                        <!-- Botao -->
+                        <p> <input class="button" type="submit" value="Sign in"/> </p>
+
+                    </form>
+                </main-centro>
+
+            </div>
+        </div>
+                
         <!-- footer -->
         <footer>
             <p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>

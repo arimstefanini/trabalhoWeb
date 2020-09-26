@@ -1,18 +1,28 @@
-/* reset basico */
-*{
-	margin: 0;
-	padding: 0;
+* {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;	     
-	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
 }
 
-/* conteiner */
+
+body {
+	font-size: 16px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background: #f3f3f3;
+}
+
+/* --- conteiner -- */
+
 .container {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0 20px;
+	border-bottom: 1px solid black;
 }
 
 	@media (win-width: 1170px){
@@ -22,28 +32,13 @@
 		}
 	}
 
-/* linha */
-.row {
-	margin-left: -5px;
-	margin-right: -5;
-}
-	.row:before,
-	.row:after{
-		content: "";
-		display: table;
-	}
-
-	.row:after{
-		clear: both;
-	}
-
-/* coluna */
+/* GridLayout */
 .col {
 	display: inline-block;
 	vertical-align: top;
 	min-height: 1px;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 1px;
+	padding-right: 1px;
 	width: 100%;
 	margin-right: -4px;
 	*zoom: 1;
@@ -74,14 +69,181 @@
 	}
 }
 
-.teste{
-	background: gray;
-	padding: 5px;
+/* --- menu -- */
+/* linha */
+.menu {
+	margin-left: -5px;
+	margin-right: -5;
+}
+	.menu:before,
+	.menu:after{
+		content: "";
+		display: table;
+	}
+
+	.menu:after{
+		clear: both;
+	}
+
+
+.menu-item{
+	padding: 8px;
 	text-align: center;
 	margin: 2px 0;
-	color: #fff;	
+	
 }
 
-.big{
-	height:50px;
+.menu-login{
+	float: right;
+	padding: 8px;
+	margin: 2px 0;	
+}
+
+.menu-item {
+	float: left;
+	
+}
+
+.menu-item::after {
+    content: " | ";
+}
+
+.menu-item:last-child::after {
+    content: none;
+}
+
+.menu-item a {
+    padding: 5px 10px;
+    text-decoration: none;
+	max-width: 5%;
+	color: black;  
+}
+
+/* --- conteudo -- */
+.conteudo {
+    padding: 1px;
+    
+}
+	.conteudo:before,
+	.conteudo:after{
+		content: "";
+		display: table;
+	}
+
+	.conteudo:after{
+		clear: both;
+	}
+
+aside{
+    float: right;
+    max-width: 50%;
+}
+
+section{
+    font-size: 20px;
+    margin: 5%;
+}
+
+
+.title{
+    font-size: 25px;
+    text-align: center;
+    margin: 5px;
+
+}
+
+.post img{
+    max-height: 50%;
+    max-width: 50%;
+}
+
+#post2{
+    text-align: center;
+}
+
+.locale address, .commentary article{
+    font-style: normal;
+    padding: 10px;
+}
+
+.local-city{
+    font-style: normal;
+    font-weight: bolder;
+}
+
+/*-- Footer --*/
+
+footer{
+    margin: -10px;
+    min-width: 100%;
+    clear: both;
+    overflow: no-display;
+}
+
+footer p{
+    padding: 20px;
+    font-size: 12px;
+}
+
+
+/*-- Tela Login --*/
+.acesso {
+    float: center;
+    max-width: 100%;
+    
+}
+	.acesso:before,
+	.acesso:after{
+		content: "";
+		display: table;
+	}
+
+	.acesso:after{
+		clear: both;
+	}
+
+main-centro{
+	float: justify;
+	max-width: 50%;
+	
+}
+
+main-centro form h2 {
+    font-size: 25px;
+	margin: 10px;
+	margin: 0 20px 0 300px;
+	
+}
+
+form{
+	margin: 10%;
+	margin: 70px 0px 90px 0px;
+	padding: 100px;
+}
+
+.text-input{
+    font-weight: bolder;
+    margin: 10px;
+	font-size: 20px;
+	margin:0 20px 0 300px;
+}
+
+.button{
+    position: relative;
+    background-color: #99d1f1;
+    border-color: #111111;
+    border-radius: 20px;
+    font-weight: bold;
+	margin: 20px 300px;
+	
+}
+
+input[type="text"]{ 
+    padding: 10px ; 
+   
+}
+
+input[type="password"]{ 
+    padding: 10px ; 
+   
 }

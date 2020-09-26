@@ -5,6 +5,7 @@
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
+/* Navegador */
 .menu {
     float: top;
     padding: 20px;
@@ -38,42 +39,19 @@
     color: black;
 }
 
-main{
-    float: left;
-    max-width: 50%;
- 
-}
+/* Conteudo */
 
-main-centro{
-    float: justify;
-    max-width: 50%;
-}
-
-
-main form h2 {
-    font-size: 25px;
-    margin: 10px;
+.conteudo {
+    padding: 1px;
     
 }
 
-form{
-    margin: 10%;
+main{
+    float: left;
+    max-width: 50%; 
+    
 }
 
-.text-input{
-    font-weight: bolder;
-    margin: 10px;
-    font-size: 20px;
-}
-
-.button{
-    background-color: #99d1f1;
-    border-color: #111111;
-    border-radius: 10px;
-    font-weight: bold;
-    margin: 10px;
-    padding: 5px 20px;    
-}
 
 aside{
     float: right;
@@ -86,7 +64,7 @@ section{
 }
 
 .title{
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     margin: 5px;
 
@@ -111,9 +89,10 @@ section{
     font-weight: bolder;
 }
 
+/*-- Footer --*/
+
 footer{
-    position: fixed;
-    bottom: 0;
+    margin: -10px;
     min-width: 100%;
     border-top:1px solid black;
     clear: both;
@@ -121,6 +100,54 @@ footer{
 }
 
 footer p{
-    padding: 20px;
+    padding: 10px 20px;
     font-size: 12px;
+}
+
+/*-- Tela Login --*/
+main-centro{
+    float: justify;
+    max-width: 50%;
+}
+
+.acesso{
+    padding: 50px;
+    text-align: center;
+}
+
+main form h2 {
+    font-size: 25px;
+    margin: 10px;
+    
+}
+
+form{
+    margin: 10%;
+}
+
+.text-input{
+    font-weight: bolder;
+    margin: 10px;
+    font-size: 20px;
+    
+}
+
+.button{
+    position: relative;
+    background-color: #99d1f1;
+    border-color: #111111;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 20px;
+    padding: 10px 25px;  
+    right: 190px;  
+}
+
+input[type="text"]{ 
+    padding: 10px ; 
+   
+}
+input[type="password"]{ 
+    padding: 10px ; 
+   
 }

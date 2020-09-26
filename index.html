@@ -3,84 +3,102 @@
 	<head>
 		<title>Sparkling Water Hostel Aplication</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/boxmodel.css" />
+		<link rel="stylesheet" type="text/css" href="css/gridlayout.css" >
 	</head>
 
-	<body class="sidebar">
+	<body>
 
 		<!-- cabecalho da pagina -->
-		<header>
+		<header  class="container">
 			<!-- navegador -->
-			<nav class="menu">
+			<nav class="menu" >
 				<!-- menu do lado esquerdo -->
-				<nav id="menu-pages">
-					<ul>
-						<li class="menu-item"><a href="index.html">Home</a></li>
-						<li class="menu-item"><a href="#">Customers</a></li>
-						<li class="menu-item"><a href="#">Rooms</a></li>
-						<li class="menu-item"><a href="#">Reservations</a></li>
-						<li class="menu-item"><a href="#">Contact</a></li>
-					</ul>
+				<nav class="col col-2" id="menu-pages" >
+					
+						<ul class="menu-item">
+							<li class="menu-item"><a href="index.html">Home</a></li>
+							<li class="menu-item"><a href="#">Customers</a></li>
+							<li class="menu-item"><a href="#">Rooms</a></li>
+							<li class="menu-item"><a href="#">Reservations</a></li>
+							<li class="menu-item"><a href="#">Contact</a></li>
+						</ul>
+					
 				</nav>
 				<!-- menu do lado direito -->
-				<nav id="menu-login">
-					<ul>
+				<nav class="col col-2" id="menu-login"  >
+					
+					<ul class="menu-login">
 						<li class="menu-item"><a href="login.html">Sign in</a></li>
 						<li class="menu-item"><a href="#">Sign up</a></li>
 					</ul>
+				
 				</nav>
 			</nav>
 		</header>
 
-		<!-- conteudo principal da pagina-->
-		<!-- parte esquerda da pagina-->
-		<main>
-			<!-- primeiro post-->
-			<section class="post" id="post1">
-				<h2 class="title">Sparkling Water Hostel </h2>
-				<p> The hostel Sparkling Water is a fictious hostel located in Caxambu-<abbr title="Minas Gerais">MG</abbr>, Brazil. Caxambu is a small town
-					(it population is 2020 was estimated at 22,000), renowned for its spa which has twelve sources of sparking mineral water flowing 24 hours
-					a day and a cold-water geyser. Caxambu is the only place in the world with 12 mineral water springs, each with different chemical properties </p>
-			</section>
-			<!-- segundo post -->
-			<section class="post" id="post2">
-				<h2 class="title">Park</h2>
-				<p>The Water Park is the main attraction in town.</p>
-				<img class="img-postagem" src="img/caxambu.jpg" >
-				<p>Photo of the bathhouse located at the Water Park</p>
-			</section>
-		</main>
-		<!-- conteudo segundario da pagina-->
-		<!-- parte direita da pagina-->
-		<aside>
-			<!-- secao da localizacao dos hoteis -->
-			<section class="locale">
-				<h2 class="title">How to get to the Hotel?</h2>
-				<!-- primeiro endereco -->
-				<address>
-					<em class="local-city">From Rio de Janeiro</em> <br>
-					Via BR-119 (President Dutra) west past Resend-<abbr title="Rio de Janeiro">RJ</abbr>
-					to the village of Engenheiro Passos-<abbr title="Rio de Janeiro">RJ</abbr> and take BR-354 north.<br>
-				</address>
-				<!-- segundo endereco -->
-				<address>
-					<em class="local-city">From Belo Horizonte or São Paulo</em><br>
-					Via BR-381 to Campanha-<abbr title="Minas Gerais">MG</abbr>, then west on BR-267.<br>
-				</address>
-			</section>
-			<!-- secao de comentarios -->
-			<section class="commentary">
-				<h2 class="title"> Famous tourinsm quotes</h2>
-				<!-- primeiro comentario -->
-				<article>
-					<p>"Never go on trips with anyone you do not love". <cite>Ernest Hemingway</cite></p>
-				</article>
-				<!-- segundo comentario -->
-				<article>
-					<p>"To travel is to discover that everyone is wrong about other countries". <cite>Aldous Huxley</cite></p>
-				</article>
-			</section>
-		</aside>
+		<!-- conteudo -->
+		<div class="container">
+			<div class="conteudo">
+				<!-- conteudo principal da pagina-->
+				<!-- parte esquerda da pagina-->
+				<main class="col col-2">
+					
+					<!-- primeiro post-->
+					<section class="post" id="post1">
+						
+							<h2 class="title">Sparkling Water Hostel </h2>
+							<p> The hostel Sparkling Water is a fictious hostel located in Caxambu-<abbr title="Minas Gerais">MG</abbr>, Brazil. Caxambu is a small town
+								(it population is 2020 was estimated at 22,000), renowned for its spa which has twelve sources of sparking mineral water flowing 24 hours
+								a day and a cold-water geyser. Caxambu is the only place in the world with 12 mineral water springs, each with different chemical properties </p>
+					
+					</section>
+					<!-- segundo post -->
+					<section class="post" id="post2">
+						
+						<h2 class="title">Park</h2>
+						<p>The Water Park is the main attraction in town.</p>
+						<img class="img-postagem" src="img/caxambu.jpg" >
+						<p>Photo of the bathhouse located at the Water Park</p>
+					
+					</section>
+
+				</main>
+				<!-- conteudo segundario da pagina-->
+				<!-- parte direita da pagina-->
+				<aside class="col col-2">
+
+					<!-- secao da localizacao dos hoteis -->
+					<section class="locale">
+						<h2 class="title">How to get to the Hotel?</h2>
+						<!-- primeiro endereco -->
+						<address>
+							<em class="local-city">From Rio de Janeiro</em> <br>
+							Via BR-119 (President Dutra) west past Resend-<abbr title="Rio de Janeiro">RJ</abbr>
+							to the village of Engenheiro Passos-<abbr title="Rio de Janeiro">RJ</abbr> and take BR-354 north.<br>
+						</address>
+						<!-- segundo endereco -->
+						<address>
+							<em class="local-city">From Belo Horizonte or São Paulo</em><br>
+							Via BR-381 to Campanha-<abbr title="Minas Gerais">MG</abbr>, then west on BR-267.<br>
+						</address>
+					</section>
+					<!-- secao de comentarios -->
+					<section class="commentary">
+						<h2 class="title"> Famous tourinsm quotes</h2></br></br>
+						<!-- primeiro comentario -->
+						<article>
+							<p>"Never go on trips with anyone you do not love". <cite>Ernest Hemingway</cite></p>
+						</article>
+						<!-- segundo comentario -->
+						<article>
+							<p>"To travel is to discover that everyone is wrong about other countries". <cite>Aldous Huxley</cite></p>
+						</article>
+					</section>
+
+				</aside>
+			</div>
+		</div>
+
 		 <!-- footer -->
 		<footer>
 			<p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>
