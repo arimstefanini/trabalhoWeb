@@ -55,16 +55,16 @@ class Pager{
     setPage(newValue){
         if((newValue>=0) && (newValue*this.pagesize < this.customers.length)){
             this.page=newValue;
-            this.refresh();
         }
+        this.refresh();
     }
 
     //sets maximum ammount of customers on each page.
     setPageSize(newValue){
-        if(newValue>0){
-        this.pagesize=newValue;
-        this.refresh();
+        if((newValue>0)&&(newValue*this.page < this.customers.length)){
+            this.pagesize=newValue;
         }
+        this.refresh();
     }
 
     //utility function for churning out table rows.
