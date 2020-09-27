@@ -1,4 +1,9 @@
 
+
+//
+/*CLASSES FOR PAGED LIST OPERATION*/
+//
+
 //Pager is a class containing the core logic of an interactive table.
 //It displays a manageable subset of an arbitrarily sized dataset, provided to it
 //as a javascript object array with its members having predefined structure.
@@ -52,7 +57,6 @@ class Pager{
             this.page=newValue;
             this.refresh();
         }
-        
     }
 
     //sets maximum ammount of customers on each page.
@@ -81,6 +85,14 @@ class Pager{
 
 }
 
+
+//PageList is a list of buttons that watches over a Pager.
+//  Their relationship is two-way:
+//-the PageList triggers page changes on Pager when any of
+//its buttons are pressed.
+//-the button notifies all observers (PageList included)
+//when internal state is changed. PageList observes 
+//for changes in Pager to decide how many pages are available.  
 class PageList{
     constructor(target, pager){
         this.target=target;
@@ -94,6 +106,7 @@ class PageList{
         return Math.ceil(this.sourcePager.customers.length / this.sourcePager.pagesize);
     }
 
+    //TWO-WAY BINDING VIA OBSERVER PATTERN
     //might rename this later.
     //having subscribed to Pager as an Observer, the Pager calls this method 
     //to announce that some data has changed and presentation may have to change.
@@ -128,11 +141,11 @@ class PageList{
 
 
 
-
+//
 /*AUXILLIARY FUNCTIONS FOR MAIN SCRIPT
 this code does stuff... sorry, i couldn't come up with a fancy description.
 */
-
+//
 
 //wraps an XMLHttpRequest fetch operation in a Promise object.
 function XMLHttpPromiseWrapper(url){
