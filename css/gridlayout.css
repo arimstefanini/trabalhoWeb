@@ -24,7 +24,7 @@ body {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 0 20px;
+	padding: 20px;
 	border-bottom: 1px solid black;
 }
 
@@ -85,14 +85,10 @@ body {
 	}
 }
 
-
-
-
 /* --- menu -- */
 /* linha */
 .menu {
-	margin-left: -5px;
-	margin-right: -5;
+	margin: 0;
 }
 	.menu:before,
 	.menu:after{
@@ -108,19 +104,8 @@ body {
 .menu-item{
 	padding: 8px;
 	text-align: center;
-	margin: 2px 0;
-	
-}
-
-.menu-login{
-	float: right;
-	padding: 8px;
-	margin: 2px 0;	
-}
-
-.menu-item {
-	float: left;
-	
+	list-style-type: none;
+	display: inline; 
 }
 
 .menu-item::after {
@@ -138,9 +123,11 @@ body {
 	color: black;  
 }
 
-ul {
-    list-style-type: none;
-  }
+#login{
+	padding-left: 450px;
+}
+
+
 
 /* --- conteudo -- */
 .conteudo {
@@ -178,6 +165,17 @@ section{
 .post img{
     max-height: 50%;
     max-width: 50%;
+}
+
+#post1, #post2, .locale, .commentary{
+    text-align: left;
+    height: 280px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+#texto{
+	padding: 0 60px 0 60px;
 }
 
 #post2{
@@ -231,7 +229,6 @@ form{
 }
 
 main-centro h2 {
-
     font-size: 25px;
 	margin: 10px;
 	

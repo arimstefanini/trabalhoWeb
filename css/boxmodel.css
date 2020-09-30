@@ -88,11 +88,9 @@ aside{
 
 #post1, #post2, .locale, .commentary{
     text-align: left;
-  
     height: 280px;
     font-size: 20px;
     margin: 5px;
-    
 }
 
 #post2{
