@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    overflow:hidden;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:border-box;
@@ -134,6 +133,10 @@ body {
 	max-width: 5%;
 	color: black;  
 }
+
+ul {
+    list-style-type: none;
+  }
 
 /* --- conteudo -- */
 .conteudo {

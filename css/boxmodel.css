@@ -9,12 +9,9 @@
    
 }
 
-.container{
-    max-width: auto;
-    max-height: auto;
-}
 /* Navegador */
 header{
+
     border-bottom: 1px solid black
 }
 
@@ -34,7 +31,7 @@ header{
 
 .header p, 
 ul {
-  padding: 30px 30px 10px 30px;
+  padding: 10px 30px 10px 30px;
   display: inline-block;
 
 }
@@ -62,10 +59,10 @@ ul {
 
 
 /* Conteudo */
-
-.conteudo {
-    padding: 1px;
-    
+.conteudo{
+    width: 90%;
+    margin-bottom: -40px;
+    padding-left: 100px;
 }
 
 main{
@@ -79,26 +76,26 @@ aside{
     max-width: 45%;
     position: relative;
     bottom: 90px; 
-
-   
 }
 
-section{
-    margin: 40px;
-	width: 10px 50px 30px 1px;
-	height: 90%;;
-	padding: 10px;
-    font-size: 20px;
-}
+
 
 .post img{
     max-width: 250px;
 }
 
 
+#post1, #post2, .locale, .commentary{
+    text-align: left;
+  
+    height: 280px;
+    font-size: 20px;
+    margin: 5px;
+    
+}
+
 #post2{
-	text-align: center;
-    margin-top: 52px;
+    text-align: center;
 }
 
 .locale address, .commentary article{
