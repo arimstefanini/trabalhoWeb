@@ -1,22 +1,33 @@
-/*
-  REFERENCIA PARA A CRIACAO DO CSS BOXMODEL
-  https://developer.mozilla.org/pt-BR/docs/Aprender/CSS/Construindo_blocos/The_box_model
-*/
 * {
     margin: 0;
     padding: 0;
-    font-family: "Trebuchet MS", Helvetica, sans-serif; 
-   
+    overflow:hidden;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 /* Navegador */
-header{
-    border-bottom: 1px solid black
+.menu {
+    float: top;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+
+#menu-pages{
+    float: left;
+}
+
+#menu-login {
+    float: right;
+}
+
+.menu-item {
+    float: left;
 }
 
 .menu-item::after {
     content: " | ";
 }
+
 .menu-item:last-child::after {
     content: none;
 }
@@ -28,35 +39,6 @@ header{
     color: black;
 }
 
-.header p, 
-ul {
-  padding: 30px 30px 10px 30px;
-  display: inline-block;
-
-}
-
-li {
-  padding: .5em;
-}
-
-ul {
-  display: flex;
-  list-style: none;
-  list-style-type: none;
-}
-
-#menu-pages  {
-    display: inline-block;
-	max-width: 50%; 
-}
-
-#menu-login  {
-    display: inline-block;
-    max-width: 45%;
-    margin-left: 548px;
-}
-
-
 /* Conteudo */
 
 .conteudo {
@@ -65,47 +47,50 @@ ul {
 }
 
 main{
-    display: inline-block;
-	max-width: 50%; 
-	padding: 10px 10px 10px 10px;
+    float: left;
+    max-width: 50%; 
+    
 }
 
-aside{
-    display: inline-block;
-    max-width: 45%;
-    position: relative;
-    bottom: 90px; 
 
-   
+aside{
+    float: right;
+    max-width: 50%;
 }
 
 section{
-    margin: 40px;
-	width: 10px 50px 30px 1px;
-	height: 90%;;
-	padding: 10px;
+	float: center;
+	width: 50%;
+	padding: 5%;
+	border: 1px solid red;
+	color: black;
+	text-size-adjust: 110px;
+}
+
+.title{
     font-size: 20px;
+    text-align: center;
+    margin: 5px;
+
 }
 
 .post img{
-    max-width: 250px;
+    max-height: 50%;
+    max-width: 50%;
 }
 
-
 #post2{
-	text-align: center;
-    margin-top: 52px;
+    text-align: center;
 }
 
 .locale address, .commentary article{
     font-style: normal;
     padding: 10px;
-    padding-right: 0;
 }
 
-.title{
-	font-size: 30px;
-    text-align: center;
+.local-city{
+    font-style: normal;
+    font-weight: bolder;
 }
 
 /*-- Footer --*/
