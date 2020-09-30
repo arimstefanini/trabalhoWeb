@@ -9,6 +9,10 @@
    
 }
 
+.container{
+    max-width: auto;
+    max-height: auto;
+}
 /* Navegador */
 header{
     border-bottom: 1px solid black
@@ -125,8 +129,10 @@ footer p{
 
 /*-- Tela Login --*/
 main-centro{
-    float: justify;
-    max-width: 50%;
+    max-width: 100%;
+    display: inline-block;
+    border: 1px solid red;
+    padding: 150px;
 }
 
 .acesso{
@@ -140,9 +146,6 @@ main form h2 {
     
 }
 
-form{
-    margin: 10%;
-}
 
 .text-input{
     font-weight: bolder;
@@ -162,11 +165,7 @@ form{
     right: 190px;  
 }
 
-input[type="text"]{ 
-    padding: 10px ; 
-   
-}
-input[type="password"]{ 
+input[type="text"], [type="password"]{ 
     padding: 10px ; 
    
 }
