@@ -1,12 +1,139 @@
 /*
-  REFERENCIA PARA A CRIACAO DO CSS FLEX
-  https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+  REFERENCIA PARA A CRIACAO DO CSS BOXMODEL
+  https://developer.mozilla.org/pt-BR/docs/Aprender/CSS/Construindo_blocos/The_box_model
 */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+
+body, html {
+  font-size: 16px;
+  width: 100%;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background: #f3f3f3;
+}
+
+/* --- menu com flex-- */
+.menu {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.menu-item{
+margin-left: 10px;
+text-align: center;
+list-style-type: none;
+display: inline; 
+}
+
+.menu-item::after {
+  content: " | ";
+}
+
+.menu-item:last-child::after {
+  content: none;
+}
+
+.menu-item a {
+  padding: 5px 10px;
+  text-decoration: none;
+  max-width: 5%;
+  color: black;  
+}
+
+/* --- conteudo com flex-- */
+.conteudo{
+  display: flex;
+}
+
+.conteudo > .col-content{
+   margin: 20px;
+   width: 60%;
+}
+.conteudo > .col-sidebar{
+  margin: 20px;
+  width: 40%;
+}
+
+#post1, #post2, .locale, .commentary{
+  text-align: left;
+  height: 300px;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.title{
+  font-size: 25px;
+  text-align: center;
+  margin: 5px;
+}
+
+#post2{
+  text-align: center;
+}
+
+#texto{
+  padding: 15px;
+}
+
+.post img{
+  max-height: 50%;
+  max-width: 50%;
+  text-align: center;
+}
+
+/*-- Footer --*/
+
+footer{
+  min-width: 100%;
+  border-top:1px solid black;
+  clear: both;
+  overflow: no-display;
+  bottom: 0;
+}
+
+footer p{
+  padding: 10px 20px;
+  font-size: 12px;
+}
+
+.col-without{
+    height: 100%;
+    min-height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 200px;
+}
+
+.button{
+  position: relative;
+  background-color: #99d1f1;
+  border-color: #111111;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 20px;
+  padding: 10px 25px;  
+  right: 1px;  
+}
+
+input[type="text"]{ 
+  padding: 10px ; 
+ 
+}
+input[type="password"]{ 
+  padding: 10px ; 
+ 
 }

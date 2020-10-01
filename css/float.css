@@ -5,18 +5,28 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    -webkit-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
 
+
+body, html {
+    font-size: 16px;
+    width: 100%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background: #f3f3f3;
+}
 /* Navegador */
 .menu {
     float: top;
-    padding: 40px;
-    padding-top: 10px;
+    padding: 15px;
+    padding-bottom: 30px;
     border-bottom: 1px solid black;
+}
+
+ul{
+    list-style: none;
 }
 
 #menu-pages{
@@ -46,16 +56,13 @@
     color: black;
 }
 
-ul {
-    list-style-type: none;
-}
 
 /* Conteudo */
  .conteudo{
     width: 90%;
     height: 90%;
-    padding-left: 100px;
-   
+    margin-left: 100px;
+    padding-top: 15px;
 }
 
 @media (min-width: 992px){
@@ -63,6 +70,7 @@ ul {
         float: left;
         width: 50%;
         height: 650px;
+        margin-right: 40px;
     }
 
     .col-sidebar{
@@ -96,7 +104,7 @@ ul {
     padding: 15px;
 }
 
-.locale address, .commentary article{
+.locale address, .commentary{
     font-style: normal;
     padding: 10px;
 }
@@ -113,6 +121,7 @@ footer{
     border-top:1px solid black;
     clear: both;
     overflow: no-display;
+	bottom: 0;
 }
 
 footer p{
@@ -121,20 +130,14 @@ footer p{
 }
 
 /*-- Tela Login --*/
-main-centro{
-    float: justify;
-    max-width: 50%;
-}
 
 .acesso{
-    padding: 50px;
+    float: center;
+    height: 100%;
+    min-height: 100%;
+    -webkit-align-items: center;
     text-align: center;
-}
-
-main form h2 {
-    font-size: 25px;
-    margin: 10px;
-    
+    margin: 220px;
 }
 
 form{

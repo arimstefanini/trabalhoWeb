@@ -1,11 +1,30 @@
+<!--
+  REFERENCIA PARA A CRIACAO DO HTML
+  Curso oferecido pelo mozillla
+-->
 <!doctype html>
-<html>
+<!-- linguagem do site -->
+<html long='pt-br'>
 	<head>
 		<title>Sparkling Water Hostel Aplication</title>
+		<!--utf8 padrao mundial para caracter de linguagem pode colocar outras linguas no mesmo documento-->
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/gridlayout.css" >
+		<!-- meta de visualização e dispositivo-->
+		<meta nome="viewport" content="width-device-width, initial-scale-1.0"/>
+		<meta http-equiv="X-UA-Conpatible" content="ie=edge"/>
+		<!--meta decription é aquele q aparece em ferramenta de busca como o google-->
+        <meta name="author" content="Ariela S., Felipe C., Lucas S., Rodrigo S.">
+		<meta name="description" content="Trabalho UNIFAL-MG, curso Ciencia da Computacao, da matria Programacao Web, 
+										  com o professor Pagliares">
+        <!--existem varios tipos de meta que podem ser incluidos para informar o clinte-->
+        <meta property="og:image" content="https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.minasgerais.com.br%2Fpt%2Fatracoes%2Fcaxambu%2Fparque-das-aguas-da-caxambu&psig=AOvVaw09FGfpzOIic6i4UgZkHsEv&ust=1601633734253000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODV8-KUk-wCFQAAAAAdAAAAABAD">
+        <meta property="og:description" content="Exemplo para demosntrar uma pagina de website">
+        <meta property="og:title" content="Metadata; The HTML &lt;head&gt;, on MDN">
+		
+		<!-- css. para visualizar outros css é necessario trocar a href com o caminho do arquivo -->
+		<link rel="stylesheet" type="text/css" href="css/float.css" >
+	
 	</head>
-
 	<body>
 
 		<!-- cabecalho da pagina -->
@@ -13,7 +32,7 @@
 			<!-- navegador -->
 			<nav class="menu" >
 				<!-- menu do lado esquerdo -->
-				<nav class="col col-2" >
+				<nav class="col col-2" id="menu-pages">
 					
 						<ul >
 							<li class="menu-item"><a href="index.html">Home</a></li>
@@ -25,7 +44,7 @@
 					
 				</nav>
 				<!-- menu do lado direito -->
-				<nav class="col col-2"id="login">
+				<nav class="col col-2" id="menu-login" >
 					
 					<ul>
 						<li class="menu-item"><a href="login.html">Sign in</a></li>
@@ -88,7 +107,7 @@
 						<h2 class="title"> Famous tourinsm quotes</h2>
 						<!-- primeiro comentario -->
 						<article  id="texto">
-							<p>"Never go on trips with anyone you do not love". <cite>Ernest Hemingway</cite></p>
+							<p>"Never go on trips with anyone you do not love". <cite>Ernest Hemingway</cite></p></br>
 						</article>
 						<!-- segundo comentario -->
 						<article  id="texto">

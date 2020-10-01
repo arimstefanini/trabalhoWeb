@@ -5,20 +5,48 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Trebuchet MS", Helvetica, sans-serif; 
-    -webkit-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
 
-/* Navegador */
-header{
-    border-bottom: 1px solid black
+
+body, html {
+    font-size: 16px;
+    width: 100%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background: #f3f3f3;
+}
+
+/* --- menu com flex-- */
+.menu {
+    margin: 0;
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+	.menu:before,
+	.menu:after{
+		content: "";
+		display: table;
+	}
+
+	.menu:after{
+		clear: both;
+	}
+
+
+.menu-item{
+	padding: 8px;
+	text-align: center;
+	list-style-type: none;
+	display: inline; 
 }
 
 .menu-item::after {
     content: " | ";
 }
+
 .menu-item:last-child::after {
     content: none;
 }
@@ -26,60 +54,34 @@ header{
 .menu-item a {
     padding: 5px 10px;
     text-decoration: none;
-    max-width: 5%;
-    color: black;
+	max-width: 5%;
+	color: black;  
 }
 
-.header p, 
-ul {
-  padding: 10px 30px 10px 30px;
-  display: inline-block;
-
+#menu-login{
+    margin-left: 650px;
 }
-
-li {
-  padding: .5em;
-}
-
-ul {
-  display: flex;
-  list-style: none;
-  list-style-type: none;
-}
-
-#menu-pages  {
-    display: inline-block;
-	max-width: 50%; 
-}
-
-#menu-login  {
-    display: inline-block;
-    max-width: 45%;
-    margin-left: 548px;
-}
-
 
 /* Conteudo */
 .conteudo{
-    width: 90%;
-    margin-bottom: -40px;
-    padding-left: 100px;
+    padding: 30px;
+    margin-left: 100px;
+    height: 640px;
 }
 
 main{
     display: inline-block;
 	max-width: 50%; 
-	padding: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
 }
 
 aside{
     display: inline-block;
     max-width: 45%;
     position: relative;
-    bottom: 90px; 
+    bottom: 71px; 
+    margin-left: 50px;
 }
-
-
 
 .post img{
     max-width: 250px;
@@ -111,11 +113,11 @@ aside{
 /*-- Footer --*/
 
 footer{
-    margin: -10px;
     min-width: 100%;
     border-top:1px solid black;
     clear: both;
     overflow: no-display;
+	bottom: 0;
 }
 
 footer p{
