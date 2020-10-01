@@ -27,7 +27,16 @@ body, html {
   padding: 20px;
   border-bottom: 1px solid black;
 }
+  .menu:before,
+	.menu:after{
+		content: "";
+		display: table;
+	}
 
+	.menu:after{
+		clear: both;
+  }
+  
 .menu-item{
 margin-left: 10px;
 text-align: center;
@@ -54,6 +63,15 @@ display: inline;
 .conteudo{
   display: flex;
 }
+  .conteudo:before,
+    .conteudo:after{
+      content: "";
+      display: table;
+    }
+
+    .conteudo:after{
+      clear: both;
+    }
 
 .conteudo > .col-content{
    margin: 20px;
@@ -106,7 +124,9 @@ footer p{
   font-size: 12px;
 }
 
-.col-without{
+/* Pagina Login */
+
+.acesso{
     height: 100%;
     min-height: 100%;
     display: -webkit-flex;
@@ -117,6 +137,15 @@ footer p{
     justify-content: center;
     margin: 200px;
 }
+  .acesso:before,
+    .acesso:after{
+      content: "";
+      display: table;
+    }
+
+    .acesso:after{
+      clear: both;
+    }
 
 .button{
   position: relative;

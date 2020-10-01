@@ -68,6 +68,15 @@ body, html {
     margin-left: 100px;
     height: 640px;
 }
+.conteudo:before,
+	.conteudo:after{
+		content: "";
+		display: table;
+	}
+
+	.conteudo:after{
+		clear: both;
+	}
 
 main{
     display: inline-block;
@@ -127,15 +136,24 @@ footer p{
 
 /*-- Tela Login --*/
 main-centro{
-    max-width: 100%;
     display: inline-block;
-    padding: 150px;
 }
 
 .acesso{
+    max-width: 100%;
     padding: 50px;
     text-align: center;
+    padding: 200px;
 }
+    .acesso:before,
+      .acesso:after{
+      content: "";
+      display: table;
+    }
+
+    .acesso:after{
+      clear: both;
+    }
 
 main form h2 {
     font-size: 25px;

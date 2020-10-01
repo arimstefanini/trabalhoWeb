@@ -24,6 +24,15 @@ body, html {
     padding-bottom: 30px;
     border-bottom: 1px solid black;
 }
+    .menu:before,
+        .menu:after{
+            content: "";
+            display: table;
+        }
+
+        .menu:after{
+            clear: both;
+        }
 
 ul{
     list-style: none;
@@ -58,12 +67,21 @@ ul{
 
 
 /* Conteudo */
- .conteudo{
+.conteudo{
     width: 90%;
     height: 90%;
     margin-left: 100px;
     padding-top: 15px;
 }
+  .conteudo:before,
+    .conteudo:after{
+        content: "";
+        display: table;
+    }
+
+    .conteudo:after{
+        clear: both;
+    }
 
 @media (min-width: 992px){
     .col-content{
@@ -135,10 +153,18 @@ footer p{
     float: center;
     height: 100%;
     min-height: 100%;
-    -webkit-align-items: center;
     text-align: center;
     margin: 220px;
 }
+.acesso:before,
+	.acesso:after{
+		content: "";
+		display: table;
+	}
+
+	.acesso:after{
+		clear: both;
+	}
 
 form{
     margin: 10%;
