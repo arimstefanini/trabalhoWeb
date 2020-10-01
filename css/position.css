@@ -1,7 +1,6 @@
 /*
-  REFERENCIA PARA A CRIACAO DO CSS BOXMODEL
-  https://developer.mozilla.org/pt-BR/docs/Aprender/CSS/Construindo_blocos/The_box_model
-*/
+  REFERENCIA PARA A CRIACAO DO CSS POSITON
+  https://developer.mozilla.org/pt-BR/docs/Web/CSS/position*/
 * {
     margin: 0;
     padding: 0;
@@ -21,8 +20,8 @@ body, html {
 /* --- menu com flex-- */
 .menu {
     margin: 0;
-    display: flex;
-    padding: 20px;
+    position: relative;
+    padding: 0px;
     border-bottom: 1px solid black;
 }
 	.menu:before,
@@ -35,12 +34,28 @@ body, html {
 		clear: both;
 	}
 
+.menu ul li { 
+    display: inline; 
+}
+
+#menu-pages{
+    position: relative;
+    top: 10px;
+    width: 50%;
+}
+
+#menu-login{
+    position: relative;
+    bottom: 11px;
+    left: 750px;
+    text-align: right;
+    width: 40%;
+}
 
 .menu-item{
 	padding: 8px;
 	text-align: center;
 	list-style-type: none;
-	display: inline; 
 }
 
 .menu-item::after {
@@ -58,15 +73,14 @@ body, html {
 	color: black;  
 }
 
-#menu-login{
-    margin-left: 650px;
-}
+
 
 /* Conteudo */
 .conteudo{
-    padding: 30px;
+    position: static;
+    padding: 10px;
     margin-left: 100px;
-    height: 640px;
+    height: 550px;
 }
 .conteudo:before,
 	.conteudo:after{
@@ -79,33 +93,40 @@ body, html {
 	}
 
 main{
-    display: inline-block;
+    position: static;
 	max-width: 50%; 
     padding: 10px 10px 10px 10px;
 }
 
 aside{
-    display: inline-block;
-    max-width: 45%;
     position: relative;
-    bottom: 71px; 
-    margin-left: 50px;
+    left: 600px;
+    top: -508px;
+    max-width: 50%; 
+    padding: 10px 10px 10px 10px;
 }
 
 .post img{
-    max-width: 250px;
+    max-width: 50%;
 }
 
 
-#post1, #post2, .locale, .commentary{
+#post1{
+    position: static;
+    height: 210px;
+    width: 500px;
     text-align: left;
-    height: 280px;
-    font-size: 20px;
+    font-size: 15px;
     margin: 5px;
 }
 
 #post2{
+    position: static;
     text-align: center;
+}
+
+.locale{
+    height: 215px;
 }
 
 .locale address, .commentary article{
@@ -115,18 +136,17 @@ aside{
 }
 
 .title{
-	font-size: 30px;
+	font-size: 20px;
     text-align: center;
+    padding: 10px;
 }
 
 /*-- Footer --*/
 
 footer{
-    min-width: 100%;
+    position: relative;
+    top: 20px;
     border-top:1px solid black;
-    clear: both;
-    overflow: no-display;
-	bottom: 0;
 }
 
 footer p{
@@ -135,15 +155,10 @@ footer p{
 }
 
 /*-- Tela Login --*/
-main-centro{
-    display: inline-block;
-}
-
 .acesso{
     max-width: 100%;
-    padding: 50px;
     text-align: center;
-    padding: 200px;
+    padding: 170px;
 }
     .acesso:before,
       .acesso:after{
@@ -171,13 +186,14 @@ main form h2 {
 
 .button{
     position: relative;
+    margin: 20px;
+    padding: 10px 25px;  
+    right: 190px;  
     background-color: #99d1f1;
     border-color: #111111;
     border-radius: 20px;
     font-weight: bold;
-    margin: 20px;
-    padding: 10px 25px;  
-    right: 190px;  
+    
 }
 
 input[type="text"], [type="password"]{ 

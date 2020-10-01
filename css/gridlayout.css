@@ -54,24 +54,27 @@ body, html {
 	width: 100%;
 	margin-right: -4px;
 	*zoom: 1;
-	
 }
 
 /* duas colunas*/
-@media (min-width: 480px){
-	.col-2{
-		width: 50%;
+@media (min-width: 992px){
+	.col-item{
+		width: 80%;
+	}
+
+	.col-login{
+		width:20%;
 	}
 }
 
 /* sidebar */
 @media (min-width: 992px){
 	.col-content{
-		width: 60%;
+		width: 50%;
 	}
 
 	.col-sidebar{
-		width:40%;
+		width:50%;
 	}
 }
 
@@ -112,9 +115,6 @@ body, html {
 	color: black;  
 }
 
-#menu-login{
-	padding-left: 450px;
-}
 
 
 
@@ -139,15 +139,14 @@ aside{
 }
 
 section{
-    font-size: 20px;
-    margin: 5%;
+    margin: 80px;
 }
 
 
 .title{
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
-    margin: 10px;
+    margin: 15px;
 
 }
 
@@ -158,8 +157,8 @@ section{
 
 .post, .locale, .commentary{
     text-align: left;
-    height: 250px;
-    font-size: 20px;
+    height: 170px;
+    font-size: 18px;
     margin-top: 15px;
 }
 
@@ -196,7 +195,6 @@ footer p{
 /*-- Tela Login --*/
 .acesso {
     float: center;
-	max-width: 100%;
 }
 	.acesso:before,
 	.acesso:after{
@@ -209,22 +207,18 @@ footer p{
 	}
 	
 form{
-	margin: 8%;
-	margin-left: 7%;
-	padding: 5%;
+	margin: 130px;
 }
 
-main-centro h2 {
-    font-size: 25px;
+h2 {
+    font-size: 20px;
 	margin: 10px;
-	
 }
 
 .text-input{
     font-weight: bolder;
     margin: 10px;
     font-size: 20px;
-    
 }
 
 .button{
