@@ -4,126 +4,131 @@
 -->
 <!doctype html>
 <!-- linguagem do site -->
-<html long='pt-br'>
-	<head>
-		<title>Sparkling Water Hostel Aplication</title>
-		<!--utf8 padrao mundial para caracter de linguagem pode colocar outras linguas no mesmo documento-->
-		<meta charset="utf-8" />
-		<!-- meta de visualização e dispositivo-->
-		<meta nome="viewport" content="width-device-width, initial-scale-1.0"/>
-		<meta http-equiv="X-UA-Conpatible" content="ie=edge"/>
-		<!--meta decription é aquele q aparece em ferramenta de busca como o google-->
-        <meta name="author" content="Ariela S., Felipe C., Lucas S., Rodrigo S.">
-		<meta name="description" content="Trabalho UNIFAL-MG, curso Ciencia da Computacao, da matria Programacao Web, 
+<html lang='en'>
+<head>
+    <title>Sparkling Water Hostel Aplication</title>
+    <!--utf8 padrao mundial para caracter de linguagem pode colocar outras linguas no mesmo documento-->
+    <meta charset="utf-8"/>
+    <!-- meta de visualização e dispositivo-->
+    <meta nome="viewport" content="width-device-width, initial-scale-1.0"/>
+    <meta http-equiv="X-UA-Conpatible" content="ie=edge"/>
+    <!--meta decription é aquele q aparece em ferramenta de busca como o google-->
+    <meta name="author" content="Ariela S., Felipe C., Lucas S., Rodrigo S.">
+    <meta name="description" content="Trabalho UNIFAL-MG, curso Ciencia da Computacao, da matria Programacao Web,
 										  com o professor Pagliares">
-        <!--existem varios tipos de meta que podem ser incluidos para informar o clinte-->
-        <meta property="og:image" content="https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.minasgerais.com.br%2Fpt%2Fatracoes%2Fcaxambu%2Fparque-das-aguas-da-caxambu&psig=AOvVaw09FGfpzOIic6i4UgZkHsEv&ust=1601633734253000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODV8-KUk-wCFQAAAAAdAAAAABAD">
-        <meta property="og:description" content="Exemplo para demosntrar uma pagina de website">
-        <meta property="og:title" content="Metadata; The HTML &lt;head&gt;, on MDN">
-		
-		<!-- css. para visualizar outros css é necessario trocar a href com o caminho do arquivo -->
-		<link rel="stylesheet" type="text/css" href="css/flexbox.css" >
-	
-	</head>
-	<body>
+    <!--existem varios tipos de meta que podem ser incluidos para informar o clinte-->
+    <meta property="og:image"
+          content="https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.minasgerais.com.br%2Fpt%2Fatracoes%2Fcaxambu%2Fparque-das-aguas-da-caxambu&psig=AOvVaw09FGfpzOIic6i4UgZkHsEv&ust=1601633734253000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODV8-KUk-wCFQAAAAAdAAAAABAD">
+    <meta property="og:description" content="Exemplo para demosntrar uma pagina de website">
+    <meta property="og:title" content="Metadata; The HTML &lt;head&gt;, on MDN">
 
-		<!-- cabecalho da pagina -->
-		<header  class="container">
-			<!-- navegador -->
-			<nav class="menu" >
-				<!-- menu do lado esquerdo -->
-				<nav class="col col-item" id="menu-pages">
-					
-						<ul >
-							<li class="menu-item"><a href="index.html">Home</a></li>
-							<li class="menu-item"><a href="#">Customers</a></li>
-							<li class="menu-item"><a href="#">Rooms</a></li>
-							<li class="menu-item"><a href="#">Reservations</a></li>
-							<li class="menu-item" ><a href="#">Contact</a></li>
-						</ul>
-					
-				</nav>
-				<!-- menu do lado direito -->
-				<nav class="col col-login" id="menu-login" >
-					
-					<ul>
-						<li class="menu-item"><a href="login.html">Sign in</a></li>
-						<li class="menu-item"><a href="#">Sign up</a></li>
-					</ul>
-				
-				</nav>
-			</nav>
-		</header>
+    <!-- css. para visualizar outros css é necessario trocar a href com o caminho do arquivo -->
+    <link rel="stylesheet" type="text/css" href="css/float.css">
 
-		<!-- conteudo -->
-		<div class="container">
-			<div class="conteudo">
-				<!-- conteudo principal da pagina-->
-				<!-- parte esquerda da pagina-->
-				<main  class="col col-content" class="col-prin">
-					
-					<!-- primeiro post-->
-					<section class="post" id="post1">
-						<div>
-							<h2 class="title">Sparkling Water Hostel </h2>
-							<p id="texto"> 
-								The hostel Sparkling Water is a fictious hostel located in Caxambu-<abbr title="Minas Gerais">MG</abbr>, Brazil. Caxambu is a small town
-								(it population is 2020 was estimated at 22,000), renowned for its spa which has twelve sources of sparking mineral water flowing 24 hours
-								a day and a cold-water geyser. Caxambu is the only place in the world with 12 mineral water springs, each with different chemical properties </p>
-						</div>
-					</section>
-					<!-- segundo post -->
-					<section class="post" id="post2" >
-						
-						<h2 class="title">Park</h2>
-						<p  id="texto">The Water Park is the main attraction in town.</p>
-						<img class="img-postagem" src="img/caxambu.jpg" >
-						<p  id="texto">Photo of the bathhouse located at the Water Park</p>
-					
-					</section>
+</head>
+<body>
 
-				</main>
-				<!-- conteudo segundario da pagina-->
-				<!-- parte direita da pagina-->
-				<aside  class="col col-sidebar" >
+<!-- cabecalho da pagina -->
+<header class="container">
+    <!-- navegador -->
+    <nav class="menu">
+        <!-- menu do lado esquerdo -->
+        <nav class="col col-item" id="menu-pages">
+            <ul>
+                <li class="menu-item separate"><a href="index.html">Home</a></li>
+                <li class="menu-item separate"><a href="#">Customers</a></li>
+                <li class="menu-item separate"><a href="#">Rooms</a></li>
+                <li class="menu-item separate"><a href="#">Reservations</a></li>
+                <li class="menu-item"><a href="#">Contact</a></li>
+            </ul>
 
-					<!-- secao da localizacao dos hoteis -->
-					<section class="locale">
-						<h2 class="title">How to get to the Hotel?</h2>
-						<!-- primeiro endereco -->
-						<address  id="texto">
-							<em class="local-city">From Rio de Janeiro</em> <br>
-							Via BR-119 (President Dutra) west past Resend-<abbr title="Rio de Janeiro">RJ</abbr>
-							to the village of Engenheiro Passos-<abbr title="Rio de Janeiro">RJ</abbr> and take BR-354 north.<br>
-						</address>
-						<!-- segundo endereco -->
-						<address  id="texto">
-							<em class="local-city">From Belo Horizonte or São Paulo</em><br>
-							Via BR-381 to Campanha-<abbr title="Minas Gerais">MG</abbr>, then west on BR-267.<br>
-						</address>
-					</section>
-					<!-- secao de comentarios -->
-					<section class="commentary">
-						<h2 class="title"> Famous tourinsm quotes</h2>
-						<!-- primeiro comentario -->
-						<article  id="texto">
-							<p>"Never go on trips with anyone you do not love". <cite>Ernest Hemingway</cite></p></br>
-						</article>
-						<!-- segundo comentario -->
-						<article  id="texto">
-							<p>"To travel is to discover that everyone is wrong about other countries". <cite>Aldous Huxley</cite></p>
-						</article>
-					</section>
+        </nav>
+        <!-- menu do lado direito -->
+        <nav class="col col-login" id="menu-login">
 
-				</aside>
-			</div>
-		</div>
+            <ul>
+                <li class="menu-item separate"><a href="login.html">Sign in</a></li>
+                <li class="menu-item"><a href="#">Sign up</a></li>
+            </ul>
 
-		 <!-- footer -->
-		<footer>
-			<p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>
-		</footer>
+        </nav>
+    </nav>
+</header>
 
-	</body>
+<!-- conteudo -->
+<div class="container">
+    <div class="conteudo">
+        <!-- conteudo principal da pagina-->
+        <!-- parte esquerda da pagina-->
+        <main class="col col-content" class="col-prin">
+
+            <!-- primeiro post-->
+            <section class="post" id="post1">
+                <div>
+                    <h2 class="title">Sparkling Water Hostel </h2>
+                    <p class="texto">
+                        The hostel Sparkling Water is a fictious hostel located in Caxambu-<abbr
+                            title="Minas Gerais">MG</abbr>, Brazil. Caxambu is a small town
+                        (it population is 2020 was estimated at 22,000), renowned for its spa which has twelve sources
+                        of sparking mineral water flowing 24 hours
+                        a day and a cold-water geyser. Caxambu is the only place in the world with 12 mineral water
+                        springs, each with different chemical properties </p>
+                </div>
+            </section>
+            <!-- segundo post -->
+            <section class="post" id="post2">
+
+                <h2 class="title">Park</h2>
+                <p class="texto">The Water Park is the main attraction in town.</p>
+                <img class="img-postagem" src="img/caxambu.jpg">
+                <p class="texto">Photo of the bathhouse located at the Water Park</p>
+
+            </section>
+
+        </main>
+        <!-- conteudo segundario da pagina-->
+        <!-- parte direita da pagina-->
+        <aside class="col col-sidebar">
+
+            <!-- secao da localizacao dos hoteis -->
+            <section class="locale">
+                <h2 class="title">How to get to the Hotel?</h2>
+                <!-- primeiro endereco -->
+                <address class="texto">
+                    <em class="local-city">From Rio de Janeiro</em> <br>
+                    Via BR-119 (President Dutra) west past Resend-<abbr title="Rio de Janeiro">RJ</abbr>
+                    to the village of Engenheiro Passos-<abbr title="Rio de Janeiro">RJ</abbr> and take BR-354
+                    north.<br>
+                </address>
+                <!-- segundo endereco -->
+                <address class="texto">
+                    <em class="local-city">From Belo Horizonte or São Paulo</em><br>
+                    Via BR-381 to Campanha-<abbr title="Minas Gerais">MG</abbr>, then west on BR-267.<br>
+                </address>
+            </section>
+            <!-- secao de comentarios -->
+            <section class="commentary">
+                <h2 class="title"> Famous tourinsm quotes</h2>
+                <!-- primeiro comentario -->
+                <article class="texto">
+                    <p>"Never go on trips with anyone you do not love". <cite>Ernest Hemingway</cite></p></br>
+                </article>
+                <!-- segundo comentario -->
+                <article class="texto">
+                    <p>"To travel is to discover that everyone is wrong about other countries". <cite>Aldous
+                        Huxley</cite></p>
+                </article>
+            </section>
+
+        </aside>
+    </div>
+</div>
+
+<!-- footer -->
+<footer>
+    <p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>
+</footer>
+
+</body>
 
 </html>

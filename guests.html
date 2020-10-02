@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Sparkling Water Hostel Application</title>
+    <meta charset="utf-8"/>
+
+    <!-- script de controller da tabela-->
+    <script defer src="js/ControllerGuests.js" type="module"></script>
+    <link rel="stylesheet" href="css/guests.css">
+    <link rel="stylesheet" href="css/float.css">
+</head>
+<body>
+<header>
+    <!-- navegador -->
+    <nav class="menu">
+        <!-- menu do lado esquerdo -->
+        <nav id="menu-pages">
+            <ul>
+                <li class="menu-item"><a href="index.html">Home</a></li>
+                <li class="menu-item"><a href="#">Customers</a></li>
+                <li class="menu-item"><a href="#">Rooms</a></li>
+                <li class="menu-item"><a href="#">Reservations</a></li>
+                <li class="menu-item"><a href="#">Contact</a></li>
+            </ul>
+
+        </nav>
+        <!-- menu do lado direito -->
+        <nav id="menu-login">
+            <ul>
+                <li class="menu-item"><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </nav>
+</header>
+
+<main id="main-guests">
+    <header id="header-guests">
+        <h1>Guests</h1>
+        <a href="#">Add new guest</a>
+    </header>
+    <div class="up-table">
+        <label id="number-per-page"> Show <input id="number" max="10" min="1" name="number" type="number" value="10"/>
+            entries</label>
+        <label id="text-for-filter"> Search: <input id="filter" type="search"/></label>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th class="title-column">
+                <div class="text-title"> #</div>
+                <div class="arrows">
+                    <div id="up-id" class="arrow up"></div>
+                    <div id="down-id" class="arrow down"></div>
+                </div>
+            </th>
+            <th class="title-column">
+                <div class="text-title"> Phone Number</div>
+                <div class="arrows">
+                    <div id="up-phone" class="arrow up"></div>
+                    <div id="down-phone" class="arrow down"></div>
+                </div>
+            </th>
+            <th class="title-column">
+                <div class="text-title"> First Name</div>
+                <div class="arrows">
+                    <div id="up-fName" class="arrow up"></div>
+                    <div id="down-fName" class="arrow down"></div>
+                </div>
+            </th>
+            <th class="title-column">
+                <div class="text-title"> Last Name</div>
+                <div class="arrows">
+                    <div id="up-lName" class="arrow up"></div>
+                    <div id="down-lName" class="arrow down"></div>
+                </div>
+            </th>
+            <th class="title-column">
+                <div class="text-title"> Email Address</div>
+                <div class="arrows">
+                    <div id="up-email" class="arrow up"></div>
+                    <div id="down-email" class="arrow down"></div>
+                </div>
+            </th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="down-table">
+        <p id="info-table-text">Showing <span id="indexStart"> </span> to <span id="indexEnd"> </span> of <span
+                id="indexAll"> </span> entries</p>
+        <nav>
+            <span class="page-button-text" id="regress">Previous</span>
+            <button class="page-button"></button>
+            <button class="page-button"></button>
+            <button class="page-button"></button>
+            <span class="page-button-text" id="next">Next</span>
+        </nav>
+    </div>
+</main>
+
+<!-- footer -->
+<footer>
+    <p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>
+</footer>
+</body>
+
+</html>

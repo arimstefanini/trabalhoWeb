@@ -5,40 +5,39 @@
 * {
     margin: 0;
     padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 body, html {
-    font-size: 16px;
     width: 100%;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	background: #f3f3f3;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
 /* Navegador */
 .menu {
     float: top;
     padding: 15px;
-    padding-bottom: 15px;
     border-bottom: 1px solid black;
 }
-    .menu:before,
-        .menu:after{
-            content: "";
-            display: table;
-        }
 
-        .menu:after{
-            clear: both;
-        }
+.menu:before,
+.menu:after {
+    content: "";
+    display: table;
+}
 
-ul{
+.menu:after {
+    clear: both;
+}
+
+ul {
     list-style: none;
 }
 
-#menu-pages{
+#menu-pages {
     float: left;
 }
 
@@ -50,12 +49,8 @@ ul{
     float: left;
 }
 
-.menu-item::after {
+.separate:after {
     content: " | ";
-}
-
-.menu-item:last-child::after {
-    content: none;
 }
 
 .menu-item a {
@@ -67,131 +62,137 @@ ul{
 
 
 /* Conteudo */
-.conteudo{
+.conteudo {
     width: 90%;
     margin-left: 100px;
     padding-top: 15px;
-    
+
 }
-  .conteudo:before,
-    .conteudo:after{
-        content: "";
-        display: table;
-    }
 
-    .conteudo:after{
-        clear: both;
-    }
+.conteudo:before,
+.conteudo:after {
+    content: "";
+    display: table;
+}
 
-@media (min-width: 992px){
-    .col-content{
+.conteudo:after {
+    clear: both;
+}
+
+@media (min-width: 992px) {
+    .col-content {
         float: left;
         width: 50%;
         height: 560px;
         margin-right: 40px;
     }
 
-    .col-sidebar{
+    .col-sidebar {
         float: left;
         width: 40%;
     }
 }
-.title{
-    font-size: 20px;
+
+.title {
+    font-size: 22px;
     text-align: center;
     margin: 5px;
 }
 
-.post img{
+.post img {
     max-width: 250px;
 }
 
-.post, .locale, .commentary{
+.post, .locale, .commentary {
     text-align: left;
     height: 250px;
     font-size: 15px;
     margin: 5px;
 }
 
-#post2{
+#post2 {
     text-align: center;
 }
 
-#texto{
+.texto {
+    font-size: 20px;
     padding: 15px;
 }
 
-.locale address, .commentary{
+.locale address, .commentary {
     font-style: normal;
     padding: 10px;
 }
 
-.local-city{
+.local-city {
     font-style: normal;
     font-weight: bolder;
 }
 
 /*-- Footer --*/
 
-footer{
+footer {
     min-width: 100%;
-    border-top:1px solid black;
+    border-top: 1px solid black;
     clear: both;
-    overflow: no-display;
-	bottom: 0;
+    position: absolute;
+    height: 50px;
+    bottom: 0;
 }
 
-footer p{
-    padding: 10px 20px;
-    font-size: 12px;
+footer p {
+    padding: 15px 20px;
+    font-size: 16px;
 }
 
 /*-- Tela Login --*/
 
-.acesso{
+.acesso {
     float: center;
     height: 100%;
     min-height: 100%;
     text-align: center;
     margin: 60px;
 }
+
 .acesso:before,
-	.acesso:after{
-		content: "";
-		display: table;
-	}
+.acesso:after {
+    content: "";
+    display: table;
+}
 
-	.acesso:after{
-		clear: both;
-	}
+.acesso:after {
+    clear: both;
+}
 
-form{
+form {
     margin: 10%;
 }
 
-.text-input{
+.text-input {
     font-weight: bolder;
     margin: 10px;
     font-size: 20px;
-    
+
 }
 
-.button{
+.button {
     position: relative;
     background-color: #99d1f1;
     border-color: #111111;
     border-radius: 20px;
     font-weight: bold;
     margin: 20px;
-    padding: 10px 25px;  
-    right: 190px;  
+    padding: 10px 25px;
+    right: 190px;
 }
 
-input[type="text"]{ 
-    padding: 10px ; 
-   
+input[type="text"] {
+    padding: 10px;
+
 }
-input[type="password"]{ 
-    padding: 10px ; 
-   
+
+input[type="password"] {
+    padding: 10px;
+
 }
