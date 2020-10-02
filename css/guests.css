@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* Navegador */
+.menu {
+    float: top;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+
+.menu:before,
+.menu:after {
+    content: "";
+    display: table;
+}
+
+.menu:after {
+    clear: both;
+}
+
+ul {
+    list-style: none;
+}
+
+#menu-pages {
+    float: left;
+}
+
+#menu-login {
+    float: right;
+}
+
+.menu-item {
+    float: left;
+}
+
+.separate:after {
+    content: " | ";
+}
+
+.menu-item a {
+    padding: 5px 10px;
+    text-decoration: none;
+    max-width: 5%;
+    color: black;
+}
+
+/* Tabela */
+
+.up-table{
+    margin-top: 10px;
+    width: 100%;
+    float: left;
+}
+
+#number-per-page{
+    float: left;
+}
+
+#number-per-page input{
+    border-radius: 5px;
+    width: 35px;
+    text-align: center;
+}
+
+#text-for-filter{
+    float: right;
+    margin-bottom: 5px;
+}
+
+#filter{
+    height: 30px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    height: max-content;
+    border-top: solid darkgray 1px;
+    border-bottom: solid black 2px;
+}
+
+table thead{
+    border-bottom: solid black 2px;
+}
+
+.text-title{
+    max-width: 45%;
+    float: left;
+    margin-top: 10px;
+}
+
+.arrows{
+    max-width: 50%;
+    float: right;
+}
+
+.arrow {
+    margin: 5px 0px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+.up {
+    border-bottom: 12px solid #C0C0C0;
+}
+
+.down {
+    border-top: 12px solid #C0C0C0;
+}
+
+.line-table{
+    text-align: left;
+    height: 40px;
+    border-top: solid #E9EBEC 1px;
+}
+
+.cell{
+    padding-left: 30px;
+}
+
+.line-table td:first-child{
+    color: #2880FB;
+    font-weight: bolder;
+}
+
+.title-column{
+    min-width: 30px;
+    padding: 10px;
+}
+
+.odd{
+    background-color: #F2F2F2;
+}
+
+.pair{
+    background-color: white;
+}
+
+.down-table{
+    margin: 10px;
+}
+
+.down-table p {
+    float: left;
+}
+
+.down-table nav{
+    float: right;
+}
+
+.page-button-text{
+    background-color: transparent;
+    border: transparent;
+    color: black;
+}
+
+.page-button-text:disabled{
+    color: #C0C0C0;
+}
+
+.page-button-text:disabled{
+    background-color: transparent;
+    border: transparent;
+    color: #E2E2E2;
+}
+
+.page-button{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: transparent;
+    border-radius: 5px;
+}
+
+.current-page{
+    background-image: linear-gradient(#FBFCFB, #DEDFDF);
+    border: solid #C0C0C0 2px;
+}
+
+/*-- Footer --*/
+
+footer {
+    min-width: 100%;
+    border-top: 1px solid black;
+    clear: both;
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+}
+
+footer p {
+    padding: 15px 20px;
+    font-size: 16px;
+}

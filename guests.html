@@ -1,108 +1,130 @@
+<!--
+  REFERENCIA PARA A CRIACAO DO HTML
+  Curso oferecido pelo mozillla
+  JS = https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous
+-->
 <!doctype html>
-<html lang="en">
-<head>
-    <title>Sparkling Water Hostel Application</title>
-    <meta charset="utf-8"/>
+<!-- linguagem do site -->
+<html long='en'>
+	<head>
+		<title>Sparkling Water Hostel Aplication</title>
+		<!--utf8 padrao mundial para caracter de linguagem pode colocar outras linguas no mesmo documento-->
+		<meta charset="utf-8" />
+		<!-- meta de visualização e dispositivo-->
+		<meta nome="viewport" content="width-device-width, initial-scale-1.0"/>
+		<meta http-equiv="X-UA-Conpatible" content="ie=edge"/>
+		<!--meta decription é aquele q aparece em ferramenta de busca como o google-->
+        <meta name="author" content="Ariela S., Felipe C., Lucas S., Rodrigo S.">
+		<meta name="description" content="Trabalho UNIFAL-MG, curso Ciencia da Computacao, da matria Programacao Web, 
+										  com o professor Pagliares">
+        <!--existem varios tipos de meta que podem ser incluidos para informar o clinte-->
+        <meta property="og:description" content="Exemplo guests page do Hostel">
+        <meta property="og:title" content="Metadata; The HTML &lt;head&gt;, on MDN">
+		
+		<!-- css. para visualizar outros css é necessario trocar a href com o caminho do arquivo -->
+		<link rel="stylesheet" type="text/css" href="css/guests.css" >
+	
+	</head>
+    <body>
+    
+        <!-- cabecalho da pagina -->
+		<header  class="container">
+			<!-- navegador -->
+			<nav class="menu" >
+				<!-- menu do lado esquerdo -->
+				<nav class="col col-item" id="menu-pages">
+					
+						<ul >
+							<li class="menu-item"><a href="index.html">Home</a></li>
+							<li class="menu-item"><a href="#">Customers</a></li>
+							<li class="menu-item"><a href="#">Rooms</a></li>
+							<li class="menu-item"><a href="#">Reservations</a></li>
+							<li class="menu-item" ><a href="#">Contact</a></li>
+						</ul>
+					
+				</nav>
+				<!-- menu do lado direito -->
+				<nav class="col col-login" id="menu-login" >
+					
+					<ul>
+						<li class="menu-item"><a href="login.html">Sign up</a></li>
+						
+					</ul>
+				
+				</nav>
+			</nav>
+		</header>
 
-    <!-- script de controller da tabela-->
-    <script defer src="js/ControllerGuests.js" type="module"></script>
-    <link rel="stylesheet" href="css/guests.css">
-    <link rel="stylesheet" href="css/float.css">
-</head>
-<body>
-<header>
-    <!-- navegador -->
-    <nav class="menu">
-        <!-- menu do lado esquerdo -->
-        <nav id="menu-pages">
-            <ul>
-                <li class="menu-item"><a href="index.html">Home</a></li>
-                <li class="menu-item"><a href="#">Customers</a></li>
-                <li class="menu-item"><a href="#">Rooms</a></li>
-                <li class="menu-item"><a href="#">Reservations</a></li>
-                <li class="menu-item"><a href="#">Contact</a></li>
-            </ul>
+        <main id="main-guests">
+            <header id="header-guests">
+                <h1>Guests</h1>
+                <a href="#">Add new guest</a>
+            </header>
+            <div class="up-table">
+                <label id="number-per-page"> Show <input id="number" max="10" min="1" name="number" type="number" value="10"/>
+                    entries</label>
+                <label id="text-for-filter"> Search: <input id="filter" type="search"/></label>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <th class="title-column">
+                        <div class="text-title"> #</div>
+                        <div class="arrows">
+                            <div id="up-id" class="arrow up"></div>
+                            <div id="down-id" class="arrow down"></div>
+                        </div>
+                    </th>
+                    <th class="title-column">
+                        <div class="text-title"> Phone Number</div>
+                        <div class="arrows">
+                            <div id="up-phone" class="arrow up"></div>
+                            <div id="down-phone" class="arrow down"></div>
+                        </div>
+                    </th>
+                    <th class="title-column">
+                        <div class="text-title"> First Name</div>
+                        <div class="arrows">
+                            <div id="up-fName" class="arrow up"></div>
+                            <div id="down-fName" class="arrow down"></div>
+                        </div>
+                    </th>
+                    <th class="title-column">
+                        <div class="text-title"> Last Name</div>
+                        <div class="arrows">
+                            <div id="up-lName" class="arrow up"></div>
+                            <div id="down-lName" class="arrow down"></div>
+                        </div>
+                    </th>
+                    <th class="title-column">
+                        <div class="text-title"> Email Address</div>
+                        <div class="arrows">
+                            <div id="up-email" class="arrow up"></div>
+                            <div id="down-email" class="arrow down"></div>
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
 
-        </nav>
-        <!-- menu do lado direito -->
-        <nav id="menu-login">
-            <ul>
-                <li class="menu-item"><a href="login.html">Logout</a></li>
-            </ul>
-        </nav>
-    </nav>
-</header>
+            <div class="down-table">
+                <p id="info-table-text">Showing <span id="indexStart"> </span> to <span id="indexEnd"> </span> of <span
+                        id="indexAll"> </span> entries</p>
+                <nav>
+                    <span class="page-button-text" id="regress">Previous</span>
+                    <button class="page-button"></button>
+                    <button class="page-button"></button>
+                    <button class="page-button"></button>
+                    <span class="page-button-text" id="next">Next</span>
+                </nav>
+            </div>
+        </main>
 
-<main id="main-guests">
-    <header id="header-guests">
-        <h1>Guests</h1>
-        <a href="#">Add new guest</a>
-    </header>
-    <div class="up-table">
-        <label id="number-per-page"> Show <input id="number" max="10" min="1" name="number" type="number" value="10"/>
-            entries</label>
-        <label id="text-for-filter"> Search: <input id="filter" type="search"/></label>
-    </div>
-    <table>
-        <thead>
-        <tr>
-            <th class="title-column">
-                <div class="text-title"> #</div>
-                <div class="arrows">
-                    <div id="up-id" class="arrow up"></div>
-                    <div id="down-id" class="arrow down"></div>
-                </div>
-            </th>
-            <th class="title-column">
-                <div class="text-title"> Phone Number</div>
-                <div class="arrows">
-                    <div id="up-phone" class="arrow up"></div>
-                    <div id="down-phone" class="arrow down"></div>
-                </div>
-            </th>
-            <th class="title-column">
-                <div class="text-title"> First Name</div>
-                <div class="arrows">
-                    <div id="up-fName" class="arrow up"></div>
-                    <div id="down-fName" class="arrow down"></div>
-                </div>
-            </th>
-            <th class="title-column">
-                <div class="text-title"> Last Name</div>
-                <div class="arrows">
-                    <div id="up-lName" class="arrow up"></div>
-                    <div id="down-lName" class="arrow down"></div>
-                </div>
-            </th>
-            <th class="title-column">
-                <div class="text-title"> Email Address</div>
-                <div class="arrows">
-                    <div id="up-email" class="arrow up"></div>
-                    <div id="down-email" class="arrow down"></div>
-                </div>
-            </th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-    <div class="down-table">
-        <p id="info-table-text">Showing <span id="indexStart"> </span> to <span id="indexEnd"> </span> of <span
-                id="indexAll"> </span> entries</p>
-        <nav>
-            <span class="page-button-text" id="regress">Previous</span>
-            <button class="page-button"></button>
-            <button class="page-button"></button>
-            <button class="page-button"></button>
-            <span class="page-button-text" id="next">Next</span>
-        </nav>
-    </div>
-</main>
-
-<!-- footer -->
-<footer>
-    <p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>
-</footer>
-</body>
+        <!-- footer -->
+        <footer>
+            <p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>
+        </footer>
+    </body>
 
 </html>

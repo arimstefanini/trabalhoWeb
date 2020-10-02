@@ -58,7 +58,7 @@ body, html {
 	list-style-type: none;
 }
 
-.menu-item::after {
+.separate::after {
     content: " | ";
 }
 
