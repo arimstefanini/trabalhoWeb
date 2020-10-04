@@ -1,92 +1,74 @@
 import ControllerTableHead from "./ControllerTableHead.js";
-import ControllerTableInfo from "./ControllerTableInfo.js";
 import ControllerTableButtons from "./ControllerTableButtons.js";
-import controller from "../../ControllerGuests.js";
-import {refresh} from "../../ControllerGuests.js";
+
+const info = document.querySelector("#info-table-text")
 
 export default class ControllerTable {
 
     guests = []
-    page = 0
+    page = 1
     number = 10
+    filtered = false
+    original
 
     controllerButtons = new ControllerTableButtons()
-    controllerInfo = new ControllerTableInfo()
-    controllerHead = new ControllerTableHead();
+    controllerHead = new ControllerTableHead(this)
 
-    constructor(number, guests) {
-        this.number = number
-        this.guests = guests
+    constructor(localDatabase) {
+        this.original = localDatabase
+        this.rebase()
     }
 
     filter(subValue) {
-        this.guests = this.guests.filter((guest) => guest.includes(subValue))
-        this.setPage(0)
+        this.rebase()
+        this.filtered = subValue !== ''
+        if (this.filtered) {
+            this.guests = this.guests.filter((guest) => guest.includes(subValue))
+        }
+        this.controllerHead.reorder()
     }
 
-    getIndexStart() {
-        return this.page * this.number
+    orderBy(field, order) {
+        this.guests.sort((a, b) => (a.getField(field) > b.getField(field)) ? 1 * order : ((b.getField(field) > a.getField(field)) ? -1 * order : 0))
+        this.page = 1
+        this.update()
     }
 
-    getIndexEnd() {
-        return Math.min(this.getIndexStart() + this.number, this.getNumberGuests()) - 1
+    numberPages() {
+        return Math.max(1, Math.ceil(this.guests.length / this.number))
+    }
+
+    indexStart() {
+        return (this.page - 1) * this.number;
+    }
+
+    indexEnd() {
+        return Math.min(this.indexStart() + this.number, this.guests.length) - 1;
+    }
+
+    update() {
+        this.controllerButtons.update(this.page, this.numberPages())
+        this.updateInfo(this.indexStart() + 1, this.indexEnd() + 1, this.guests.length, this.filtered, this.original.size())
     }
 
     getGuestsPage() {
         let regress = []
-        let start = this.getIndexStart()
-        let end = this.getIndexEnd()
+        let start = this.indexStart()
+        let end = this.indexEnd()
         for (let i = start; i <= end; i++) {
             regress[regress.length] = this.guests[i]
         }
         return regress
     }
 
-    setGuests(value) {
-        this.guests = value
-        this.controllerHead.reorder()
-        this.setPage(0)
+    rebase() {
+        this.guests = this.original.clone()
+        this.filtered = false
     }
 
-    setNumber(value) {
-        this.number = Number(value)
-        this.setPage(0)
+    updateInfo(start, end, all, asFilter, total){
+        info.textContent = 'Showing '+ Math.min(start, end) + ' to ' + end + ' of ' + all + ' entries' + (asFilter ? ' (filtered from '+total+ ' total entries)' : '')
     }
 
-    getPage = () => this.page;
-
-    setPage(value) {
-        let newPg = Number(value)
-        if (0 <= newPg && newPg < controller.getNumberPages()) {
-            this.page = newPg
-            refresh()
-        }
-    }
-
-    getNumberGuests() {
-        return this.guests.length
-    }
-
-    getNumberPages() {
-        return Math.max(1, Math.ceil(this.getNumberGuests() / this.number))
-    }
-
-    asNextPage() {
-        return this.page + 1 !== this.getNumberPages()
-    }
-
-    isFirstPage() {
-        return this.page === 0
-    }
-
-    orderBy(field, order) {
-        this.guests.sort((a, b) => (a.getField(field) > b.getField(field)) ? 1 * order : ((b.getField(field) > a.getField(field)) ? -1 * order : 0))
-        this.setPage(0)
-    }
-
-    update() {
-        this.controllerButtons.updateButtons()
-        this.controllerInfo.update()
-    }
 }
 

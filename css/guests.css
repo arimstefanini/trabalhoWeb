@@ -7,7 +7,6 @@
 }
 
 body, html {
-    width: 100%;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
@@ -55,34 +54,52 @@ ul {
     color: black;
 }
 
-/* Tabela */
+#main-guests {
+    margin: 10px;
+}
 
-.up-table{
+#header-guests{
+    margin: 5px;
+}
+
+#header-guests h1{
+    float: left;
+}
+
+#header-guests a {
+    margin-top: 10px;
+    font-size: 22px;
+    float: right;
+    color: #0476B6;
+}
+
+/* Tabela */
+.up-table {
     margin-top: 10px;
     width: 100%;
     float: left;
 }
 
-#number-per-page{
+#number-per-page {
     float: left;
 }
 
-#number-per-page input{
+#number-per-page input {
     border-radius: 5px;
     width: 35px;
     text-align: center;
 }
 
-#text-for-filter{
+#text-for-filter {
     float: right;
     margin-bottom: 5px;
 }
 
-#filter{
+#filter {
     height: 30px;
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
     height: max-content;
@@ -90,66 +107,69 @@ table{
     border-bottom: solid black 2px;
 }
 
-table thead{
+table thead {
     border-bottom: solid black 2px;
 }
 
-.text-title{
-    max-width: 45%;
+.text-title {
     float: left;
-    margin-top: 10px;
+    margin-top: 4px;
 }
 
-.arrows{
+.arrows {
     max-width: 50%;
     float: right;
 }
 
 .arrow {
-    margin: 5px 0px;
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
 }
 
 .up {
-    border-bottom: 12px solid #C0C0C0;
+    margin-bottom: 2px;
+    border-bottom: 10px solid #C0C0C0;
 }
 
 .down {
-    border-top: 12px solid #C0C0C0;
+    margin-top: 2px;
+    border-top: 10px solid #C0C0C0;
 }
 
-.line-table{
+.line-table {
     text-align: left;
     height: 40px;
-    border-top: solid #E9EBEC 1px;
+    border-top: solid #E9EBEC 2px;
 }
 
-.cell{
+.line-table:first-child {
+    border-top: none;
+}
+
+.cell {
     padding-left: 30px;
 }
 
-.line-table td:first-child{
+.line-table td:first-child {
     color: #2880FB;
     font-weight: bolder;
 }
 
-.title-column{
-    min-width: 30px;
+.title-column {
     padding: 10px;
 }
 
-.odd{
+.odd {
     background-color: #F2F2F2;
 }
 
-.pair{
+.pair {
     background-color: white;
 }
 
-.down-table{
+.down-table {
     margin: 10px;
 }
 
@@ -157,35 +177,46 @@ table thead{
     float: left;
 }
 
-.down-table nav{
+.down-table nav {
     float: right;
 }
 
-.page-button-text{
-    background-color: transparent;
-    border: transparent;
+.buttons {
+    float: left;
+}
+
+.button {
     color: black;
-}
-
-.page-button-text:disabled{
-    color: #C0C0C0;
-}
-
-.page-button-text:disabled{
+    font-size: 15px;
     background-color: transparent;
     border: transparent;
-    color: #E2E2E2;
-}
-
-.page-button{
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: transparent;
+    text-align: center;
     border-radius: 5px;
 }
 
-.current-page{
+.button-text {
+    width: 80px;
+    height: 50px;
+}
+
+.button-text:disabled {
+    color: #C0C0C0;
+}
+
+.button-normal {
+    width: 50px;
+    height: 50px;
+}
+
+#regress {
+    float: left;
+}
+
+#next {
+    float: right;
+}
+
+.current-page {
     background-image: linear-gradient(#FBFCFB, #DEDFDF);
     border: solid #C0C0C0 2px;
 }
@@ -193,12 +224,12 @@ table thead{
 /*-- Footer --*/
 
 footer {
-    min-width: 100%;
-    border-top: 1px solid black;
-    clear: both;
-    position: absolute;
+    width: 100%;
     height: 50px;
+    border-top: 1px solid black;
+    position: absolute;
     bottom: 0;
+    background-color: #FBFCFB;
 }
 
 footer p {
