@@ -1,6 +1,6 @@
 import {updatePage} from "../../ControllerGuests.js";
 
-export default class ControllerTableHead {
+export default class CTHead {
 
     observer;
     lassOrder;
@@ -9,11 +9,9 @@ export default class ControllerTableHead {
         this.observer = observer
         let ups = document.querySelectorAll('.up')
         let downs = document.querySelectorAll('.down')
-        const order = ['id', 'phone', 'firstName', 'lastName', 'email']
+        let order = ['id', 'phone', 'firstName', 'lastName', 'email']
         for (let i = 0; i < ups.length; i++) {
             ups[i].addEventListener('click', () => this.update(order[i], 1, ups[i]))
-        }
-        for (let i = 0; i < downs.length; i++) {
             downs[i].addEventListener('click', () => this.update(order[i], -1, downs[i]))
         }
         this.lassOrder = ups[0]

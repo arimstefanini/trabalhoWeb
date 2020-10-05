@@ -1,5 +1,5 @@
-import ControllerTableHead from "./ControllerTableHead.js";
-import ControllerTableButtons from "./ControllerTableButtons.js";
+import CTHead from "./CTHead.js";
+import CTButtons from "./CTButtons.js";
 
 const info = document.querySelector("#info-table-text")
 
@@ -11,8 +11,8 @@ export default class ControllerTable {
     filtered = false
     original
 
-    controllerButtons = new ControllerTableButtons()
-    controllerHead = new ControllerTableHead(this)
+    controllerButtons = new CTButtons()
+    controllerHead = new CTHead(this)
 
     constructor(localDatabase) {
         this.original = localDatabase
@@ -34,17 +34,11 @@ export default class ControllerTable {
         this.update()
     }
 
-    numberPages() {
-        return Math.max(1, Math.ceil(this.guests.length / this.number))
-    }
+    numberPages = () => Math.max(1, Math.ceil(this.guests.length / this.number));
 
-    indexStart() {
-        return (this.page - 1) * this.number;
-    }
+    indexStart = () => (this.page - 1) * this.number;
 
-    indexEnd() {
-        return Math.min(this.indexStart() + this.number, this.guests.length) - 1;
-    }
+    indexEnd = () => Math.min(this.indexStart() + this.number, this.guests.length) - 1;
 
     update() {
         this.controllerButtons.update(this.page, this.numberPages())
@@ -66,9 +60,8 @@ export default class ControllerTable {
         this.filtered = false
     }
 
-    updateInfo(start, end, all, asFilter, total){
-        info.textContent = 'Showing '+ Math.min(start, end) + ' to ' + end + ' of ' + all + ' entries' + (asFilter ? ' (filtered from '+total+ ' total entries)' : '')
-    }
+    updateInfo = (start, end, all, asFilter, total) => info.textContent = 'Showing ' + Math.min(start, end) + ' to ' + end + ' of ' + all + ' entries' + (asFilter ? ' (filtered from ' + total + ' total entries)' : '')
+
 
 }
 
