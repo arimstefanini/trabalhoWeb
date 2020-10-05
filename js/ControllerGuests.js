@@ -1,8 +1,7 @@
 import ControllerTable from "./classes/controllers/ControllerTable.js";
 import LocalDatabase from "./classes/LocalDatabase.js";
 
-const base = new LocalDatabase();
-base.init()
+export {updatePage, nextPage, regressPage}
 
 const table = document.querySelector('table').tBodies[0];
 
@@ -12,66 +11,60 @@ inputNumber.addEventListener('input', updateNumber)
 const inputFilter = document.querySelector("#filter");
 inputFilter.addEventListener('input', updateFilter)
 
-const controller = new ControllerTable(Number(inputNumber.value), base.getBase())
-export default controller
+const localData = new LocalDatabase();
+localData.init()
+const controller = new ControllerTable(localData)
 
 refresh()
 
-export function refresh() {
+function refresh() {
     removeAll()
     addAll(controller.getGuestsPage())
     controller.update()
 }
 
 function updateNumber() {
-    controller.setNumber(inputNumber.value)
+    controller.number = Number(inputNumber.value)
+    controller.page = 1
+    refresh()
 }
 
 function updateFilter() {
-    controller.setGuests(base.getBase())
-    let subValue = inputFilter.value
-    if (subValue !== "") {
-        controller.filter(subValue)
-    }
+    controller.filter(inputFilter.value)
+    controller.page = 1
+    refresh()
 }
 
-function remove(index) {
-    table.deleteRow(index)
+function updatePage(page) {
+    controller.page = page
+    refresh()
+}
+
+function nextPage() {
+    updatePage(controller.page + 1)
+}
+
+function regressPage() {
+    updatePage(controller.page - 1)
 }
 
 function removeAll() {
     while (table.rows.length > 0) {
-        remove(0)
+        table.deleteRow(0)
     }
 }
 
 function add(id, phone, firsName, lastName, email) {
     let row = table.insertRow(table.rows.length);
     row.setAttribute('class', 'line-table ' + ((table.rows.length % 2 === 0) ? 'pair' : 'odd'))
-
-    let cell = row.insertCell(0)
-    cell.textContent = id;
-    cell.setAttribute('class','cell')
-
-    cell = row.insertCell(1)
-    cell.textContent = phone;
-    cell.setAttribute('class','cell')
-
-    cell = row.insertCell(2)
-    cell.textContent = firsName;
-    cell.setAttribute('class','cell')
-
-    cell = row.insertCell(3)
-    cell.textContent = lastName;
-    cell.setAttribute('class','cell')
-
-    cell = row.insertCell(4)
-    cell.textContent = email;
-    cell.setAttribute('class','cell')
+    let param = [id, phone, firsName, lastName, email]
+    for (let i = 0; i < param.length; i++) {
+        let cell = row.insertCell(i)
+        cell.textContent = param[i];
+        cell.setAttribute('class', 'cell')
+    }
 }
 
 function addAll(guests) {
-    for (let i = 0; i < guests.length; i++) {
-        add(guests[i].id, guests[i].phone, guests[i].firstName, guests[i].lastName, guests[i].email)
-    }
+    guests.forEach((guest) => add(guest.id, guest.phone, guest.firstName, guest.lastName, guest.email))
 }
