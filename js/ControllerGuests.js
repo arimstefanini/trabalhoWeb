@@ -3,6 +3,11 @@ import LocalDatabase from "./classes/LocalDatabase.js";
 
 export {updatePage, nextPage, regressPage}
 
+const localData = new LocalDatabase();
+localData.init()
+
+const controller = new ControllerTable(localData)
+
 const table = document.querySelector('table').tBodies[0];
 
 const inputNumber = document.querySelector('#number');
@@ -10,10 +15,6 @@ inputNumber.addEventListener('input', updateNumber)
 
 const inputFilter = document.querySelector("#filter");
 inputFilter.addEventListener('input', updateFilter)
-
-const localData = new LocalDatabase();
-localData.init()
-const controller = new ControllerTable(localData)
 
 refresh()
 
@@ -23,21 +24,19 @@ function refresh() {
     controller.update()
 }
 
+function updatePage(page) {
+    controller.page = page
+    refresh()
+}
+
 function updateNumber() {
     controller.number = Number(inputNumber.value)
-    controller.page = 1
-    refresh()
+    updatePage(1)
 }
 
 function updateFilter() {
     controller.filter(inputFilter.value)
-    controller.page = 1
-    refresh()
-}
-
-function updatePage(page) {
-    controller.page = page
-    refresh()
+    updatePage(1)
 }
 
 function nextPage() {

@@ -21,25 +21,25 @@ export default class Guest {
             this.email === other.email
     }
 
-    includes(subValeu) {
-        return this.id.toString().includes(subValeu) ||
-            this.phone.toString().includes(subValeu) ||
-            this.firstName.includes(subValeu) ||
-            this.lastName.includes(subValeu) ||
-            this.email.includes(subValeu)
+    includes(subValue) {
+        return this.id.toString().includes(subValue) ||
+            this.phone.toString().includes(subValue) ||
+            this.firstName.includes(subValue) ||
+            this.lastName.includes(subValue) ||
+            this.email.includes(subValue)
     }
 
-    toString = () => `Id > ${this.id} | Phone > ${this.phone} | FirstName > ${this.firstName} | LastName > ${this.lastName} | Email > ${this.email} | `;
+    toString = () => `Id > ${this.id} | Phone > ${this.phone} | FirstName > ${this.firstName} | LastName > ${this.lastName} | Email > ${this.email} | `
 
-    getId = () => this.id;
+    getId = () => this.id
 
-    getPhone = () => this.phone;
+    getPhone = () => this.phone
 
     getFirstName = () => this.firstName
 
-    getLastName = () => this.lastName;
+    getLastName = () => this.lastName
 
-    getEmail = () => this.email;
+    getEmail = () => this.email
 
     getField = name => {
         switch (name) {
@@ -48,9 +48,8 @@ export default class Guest {
             case 'lastName' : return this.lastName
             case 'email' : return this.email
             case 'phone' : return this.phone
-            default: break;
+            default: break
         }
-    };
-
+    }
 
 }

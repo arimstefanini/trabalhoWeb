@@ -4,9 +4,9 @@ const buttons = document.querySelector(".buttons")
 const regress = document.querySelector("#regress")
 const next = document.querySelector("#next")
 
-export default class ControllerTableButtons {
+export default class CTButtons {
 
-    numberButtons = 5
+    maxButtons = 5
 
     constructor() {
         regress.addEventListener('click', regressPage)
@@ -16,14 +16,16 @@ export default class ControllerTableButtons {
     update(page, numberPages) {
         this.deleteButtons()
 
-        const first = Math.max(1, (page + Math.trunc(this.numberButtons / 2) < numberPages) ? page - Math.trunc(this.numberButtons / 2) : numberPages - this.numberButtons + 1)
-        const lass = Math.min(numberPages, first + this.numberButtons - 1)
+        const first = Math.max( 1, (page + Math.trunc(this.maxButtons / 2) < numberPages) ? page - Math.trunc(this.maxButtons / 2) : numberPages - this.maxButtons + 1)
+        const lass = Math.min(numberPages, first + this.maxButtons - 1)
 
         for (let i = first; i <= lass; i++) {
             buttons.appendChild(this.createButton(i, page));
         }
+
         regress.blur()
         regress.disabled = (page === 1)
+
         next.blur()
         next.disabled = (page === numberPages)
     }
@@ -38,7 +40,7 @@ export default class ControllerTableButtons {
         let button = document.createElement('button')
         button.setAttribute('class', 'button button-normal ' + ((number === page) ? ' current-page' : ''))
         button.textContent = number
-        button.addEventListener('click',(number !== page) ? () => updatePage(Number(button.textContent)) : ()=> {} )
+        button.addEventListener('click',() => updatePage(Number(button.textContent)))
         return button
     }
 
