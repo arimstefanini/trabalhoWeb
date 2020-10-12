@@ -39,6 +39,10 @@ export default class Guest {
         return tField > oField ? 1 : oField > tField ? -1 : 0
     }
 
+    clone(){
+        return new Guest(this.getId(), this.getPhone(), this.getFirstName(), this.getLastName(), this.getEmail());
+    }
+
     getId = () => this.id
 
     getPhone = () => this.phone

@@ -1,27 +1,27 @@
 import Guest from "./Guest.js";
 
+const url = "https://hostel-app-back-end-api.herokuapp.com/customers"
+
 export default class LocalDatabase {
 
     base = []
 
     init() {
-        this.getLocaleJson().forEach((element)=>this.add(element['id'], element['phoneNumber'], element['firstName'], element['lastName'], element['emailAddress']))
+        this.getLocaleJson().forEach((element) => this.add(element['id'], element['phoneNumber'], element['firstName'], element['lastName'], element['emailAddress']))
     }
 
     add(id, phone, firstName, lastName, email) {
         this.base.push(new Guest(id, phone, firstName, lastName, email))
     }
 
-    size(){
+    size() {
         return this.base.length
     }
 
     clone() {
-        let regress = []
-        for (let i = 0; i < this.base.length; i++) {
-            regress[i] = new Guest(this.base[i].getId(), this.base[i].getPhone(), this.base[i].getFirstName(), this.base[i].getLastName(), this.base[i].getEmail())
-        }
-        return regress
+        let ret = []
+        this.base.forEach(guest => ret.push(guest.clone()))
+        return ret
     }
 
     getLocaleJson() {
@@ -236,3 +236,4 @@ export default class LocalDatabase {
     }
 
 }
+

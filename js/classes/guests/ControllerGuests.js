@@ -104,10 +104,9 @@ export default class ControllerGuests {
     addGuest(id, phone, firsName, lastName, email) {
         let row = table.insertRow(table.rows.length);
         row.setAttribute('class', 'line-table ' + ((table.rows.length % 2 === 0) ? 'pair' : 'odd'))
-        let param = [id, phone, firsName, lastName, email]
-        for (let i = 0; i < param.length; i++) {
+        for (let i = 0; i < order.length; i++) {
             let cell = row.insertCell(i)
-            cell.textContent = param[i];
+            cell.textContent = order[i];
             cell.setAttribute('class', 'cell')
         }
     }
