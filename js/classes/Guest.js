@@ -1,4 +1,5 @@
 export default class Guest {
+
     id
     phone
     firstName
@@ -13,14 +14,6 @@ export default class Guest {
         this.email = email
     }
 
-    equals(other) {
-        return this.id === other.id &&
-            this.phone === other.phone &&
-            this.firstName === other.firstName &&
-            this.lastName === other.lastName &&
-            this.email === other.email
-    }
-
     includes(subValue) {
         return this.id.toString().includes(subValue) ||
             this.phone.toString().includes(subValue) ||
@@ -28,18 +21,6 @@ export default class Guest {
             this.lastName.includes(subValue) ||
             this.email.includes(subValue)
     }
-
-    toString = () => `Id > ${this.id} | Phone > ${this.phone} | FirstName > ${this.firstName} | LastName > ${this.lastName} | Email > ${this.email} | `
-
-    getId = () => this.id
-
-    getPhone = () => this.phone
-
-    getFirstName = () => this.firstName
-
-    getLastName = () => this.lastName
-
-    getEmail = () => this.email
 
     getField = name => {
         switch (name) {
@@ -51,5 +32,25 @@ export default class Guest {
             default: break
         }
     }
+
+    compare(field, other){
+        const tField = this.getField(field)
+        const oField = other.getField(field)
+        return tField > oField ? 1 : oField > tField ? -1 : 0
+    }
+
+    clone(){
+        return new Guest(this.getId(), this.getPhone(), this.getFirstName(), this.getLastName(), this.getEmail());
+    }
+
+    getId = () => this.id
+
+    getPhone = () => this.phone
+
+    getFirstName = () => this.firstName
+
+    getLastName = () => this.lastName
+
+    getEmail = () => this.email
 
 }
