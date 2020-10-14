@@ -3,7 +3,7 @@ import ModelGuests from "./ModelGuests.js";
 const inFilter = document.querySelector("#filter");
 const inNumber = document.querySelector('#number');
 
-const ups = document.querySelectorAll('.up')
+const ups = document.querySelectorAll('.on')
 const downs = document.querySelectorAll('.down')
 const order = ['id', 'phone', 'firstName', 'lastName', 'email']
 
@@ -103,10 +103,11 @@ export default class ControllerGuests {
     /* table  */
     addGuest(id, phone, firsName, lastName, email) {
         let row = table.insertRow(table.rows.length);
-        row.setAttribute('class', 'line-table ' + ((table.rows.length % 2 === 0) ? 'pair' : 'odd'))
+        row.setAttribute('class', 'line-table ' + ((table.rows.length % 2 === 0) ? 'even' : 'odd'))
+        const param = [id, phone, firsName, lastName, email]
         for (let i = 0; i < order.length; i++) {
             let cell = row.insertCell(i)
-            cell.textContent = order[i];
+            cell.textContent = param[i];
             cell.setAttribute('class', 'cell')
         }
     }
