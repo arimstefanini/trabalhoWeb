@@ -136,7 +136,7 @@ export default class ControllerGuests {
     /*   buttons  */
 
     /* head */
-    sortButtonColor = (button, color) => (button.getAttribute('class').includes('up')) ? button.style.borderBottomColor = color : button.style.borderTopColor = color
+    sortButtonColor = (button, color) => (button.getAttribute('class').includes('on')) ? button.style.borderBottomColor = color : button.style.borderTopColor = color
 
     /* head */
 }
