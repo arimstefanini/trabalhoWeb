@@ -4,17 +4,16 @@
 * {
     margin: 0;
     padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 body, html {
     font-size: 16px;
     width: 100%;
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	background: #f3f3f3;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 /* --- menu com flex-- */
@@ -24,27 +23,28 @@ body, html {
     padding: 0px;
     border-bottom: 1px solid black;
 }
-	.menu:before,
-	.menu:after{
-		content: "";
-		display: table;
-	}
 
-	.menu:after{
-		clear: both;
-	}
-
-.menu ul li { 
-    display: inline; 
+.menu:before,
+.menu:after {
+    content: "";
+    display: table;
 }
 
-#menu-pages{
+.menu:after {
+    clear: both;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+#menu-pages {
     position: relative;
     top: 10px;
     width: 50%;
 }
 
-#menu-login{
+#menu-login {
     position: relative;
     bottom: 11px;
     left: 750px;
@@ -52,66 +52,61 @@ body, html {
     width: 40%;
 }
 
-.menu-item{
-	padding: 8px;
-	text-align: center;
-	list-style-type: none;
+.menu-item {
+    padding: 8px;
+    text-align: center;
+    list-style-type: none;
 }
 
 .separate::after {
     content: " | ";
 }
 
-.menu-item:last-child::after {
-    content: none;
-}
-
 .menu-item a {
     padding: 5px 10px;
     text-decoration: none;
-	max-width: 5%;
-	color: black;  
+    max-width: 5%;
+    color: black;
 }
 
 
-
 /* Conteudo */
-.conteudo{
+.conteudo {
     position: static;
     padding: 10px;
     margin-left: 100px;
     height: 550px;
 }
+
 .conteudo:before,
-	.conteudo:after{
-		content: "";
-		display: table;
-	}
+.conteudo:after {
+    content: "";
+    display: table;
+}
 
-	.conteudo:after{
-		clear: both;
-	}
+.conteudo:after {
+    clear: both;
+}
 
-main{
+main {
     position: static;
-	max-width: 50%; 
+    max-width: 50%;
     padding: 10px 10px 10px 10px;
 }
 
-aside{
+aside {
     position: relative;
     left: 600px;
     top: -508px;
-    max-width: 50%; 
+    max-width: 50%;
     padding: 10px 10px 10px 10px;
 }
 
-.post img{
+.post img {
     max-width: 50%;
 }
 
-
-#post1{
+#post1 {
     position: static;
     height: 210px;
     width: 500px;
@@ -120,83 +115,83 @@ aside{
     margin: 5px;
 }
 
-#post2{
+#post2 {
     position: static;
     text-align: center;
 }
 
-.locale{
+.locale {
     height: 215px;
 }
 
-.locale address, .commentary article{
+.locale address, .commentary article {
     font-style: normal;
-    padding: 10px;
-    padding-right: 0;
+    padding: 10px 0 10px 10px;
 }
 
-.title{
-	font-size: 20px;
+.title {
+    font-size: 20px;
     text-align: center;
     padding: 10px;
 }
 
 /*-- Footer --*/
 
-footer{
+footer {
     position: relative;
     top: 20px;
-    border-top:1px solid black;
+    border-top: 1px solid black;
 }
 
-footer p{
+footer p {
     padding: 10px 20px;
     font-size: 12px;
 }
 
 /*-- Tela Login --*/
-.acesso{
+.acesso {
     max-width: 100%;
     text-align: center;
     padding: 170px;
 }
-    .acesso:before,
-      .acesso:after{
-      content: "";
-      display: table;
-    }
 
-    .acesso:after{
-      clear: both;
-    }
+.acesso:before,
+.acesso:after {
+    content: "";
+    display: table;
+}
+
+.acesso:after {
+    clear: both;
+}
 
 main form h2 {
     font-size: 25px;
     margin: 10px;
-    
 }
 
-
-.text-input{
+.text-input {
     font-weight: bolder;
     margin: 10px;
     font-size: 20px;
-    
 }
 
-.button{
+.field{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.field input{
+    padding: 10px;
+}
+
+.button {
     position: relative;
     margin: 20px;
-    padding: 10px 25px;  
-    right: 190px;  
+    padding: 10px 25px;
+    right: 190px;
     background-color: #99d1f1;
     border-color: #111111;
     border-radius: 20px;
     font-weight: bold;
-    
-}
-
-input[type="text"], [type="password"]{ 
-    padding: 10px ; 
-   
 }

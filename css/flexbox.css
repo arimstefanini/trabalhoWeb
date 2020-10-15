@@ -3,132 +3,134 @@
   https://developer.mozilla.org/pt-BR/docs/Aprender/CSS/Construindo_blocos/The_box_model
 */
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 body, html {
-  font-size: 16px;
-  width: 100%;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  background: #f3f3f3;
+    font-size: 16px;
+    width: 100%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 /* --- menu com flex-- */
 .menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
-  border-bottom: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid black;
 }
-  .menu:before,
-    .menu:after{
-      content: "";
-      display: table;
-  }
 
-  .menu:after{
+.menu:before,
+.menu:after {
+    content: "";
+    display: table;
+}
+
+.menu:after {
     clear: both;
-  }
-  
-.menu-item{
-margin-left: 10px;
-list-style-type: none;
-display: inline; 
+}
+
+.menu-item {
+    margin-left: 10px;
+    list-style-type: none;
+    display: inline;
 }
 
 .separate::after {
-  content: " | ";
+    content: " | ";
 }
 
 .menu-item:last-child::after {
-  content: none;
+    content: none;
 }
 
 .menu-item a {
-  padding: 5px 10px;
-  text-decoration: none;
-  max-width: 5%;
-  color: black;  
+    padding: 5px 10px;
+    text-decoration: none;
+    max-width: 5%;
+    color: black;
 }
 
-#menu-login{
-  margin-left: 500px;
+#menu-login {
+    margin-left: 500px;
 }
 
 /* --- conteudo com flex-- */
-.conteudo{
-  display: flex;
-}
-  .conteudo:before,
-    .conteudo:after{
-      content: "";
-      display: table;
-    }
-
-    .conteudo:after{
-      clear: both;
-    }
-
-.conteudo > .col-content{
-   margin: 20px;
-   width: 60%;
-}
-.conteudo > .col-sidebar{
-  margin: 20px;
-  width: 40%;
+.conteudo {
+    display: flex;
 }
 
-#post1, #post2, .locale, .commentary{
-  text-align: left;
-  width: 550px;
-  height: 250px;
-  font-size: 18px;
-  margin: 5px;
+.conteudo:before,
+.conteudo:after {
+    content: "";
+    display: table;
 }
 
-.title{
-  font-size: 22px;
-  text-align: center;
-  margin: 5px;
+.conteudo:after {
+    clear: both;
 }
 
-#post2{
-  text-align: center;
+.conteudo > .col-content {
+    margin: 20px;
+    width: 60%;
 }
 
-#texto{
-  padding: 15px;
+.conteudo > .col-sidebar {
+    margin: 20px;
+    width: 40%;
 }
 
-.post img{
-  max-height: 50%;
-  text-align: center;
+#post1, #post2, .locale, .commentary {
+    text-align: left;
+    width: 550px;
+    height: 250px;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.title {
+    font-size: 22px;
+    text-align: center;
+    margin: 5px;
+}
+
+#post2 {
+    text-align: center;
+}
+
+#texto {
+    padding: 15px;
+}
+
+.post img {
+    max-height: 50%;
+    text-align: center;
 }
 
 /*-- Footer --*/
 
-footer{
-  min-width: 100%;
-  border-top:1px solid black;
-  clear: both;
-  overflow: no-display;
-  bottom: 0;
+footer {
+    min-width: 100%;
+    border-top: 1px solid black;
+    clear: both;
+    overflow: no-display;
+    bottom: 0;
 }
 
-footer p{
-  padding: 10px 20px;
-  font-size: 12px;
+footer p {
+    padding: 10px 20px;
+    font-size: 12px;
 }
 
 /* Pagina Login */
 
-.acesso{
+.acesso {
     height: 100%;
     min-height: 100%;
     display: -webkit-flex;
@@ -139,32 +141,42 @@ footer p{
     justify-content: center;
     margin: 170px;
 }
-  .acesso:before,
-    .acesso:after{
-      content: "";
-      display: table;
-    }
 
-    .acesso:after{
-      clear: both;
-    }
-
-.button{
-  position: relative;
-  background-color: #99d1f1;
-  border-color: #111111;
-  border-radius: 20px;
-  font-weight: bold;
-  margin: 20px;
-  padding: 10px 25px;  
-  right: 1px;  
+.acesso:before,
+.acesso:after {
+    content: "";
+    display: table;
 }
 
-input[type="text"]{ 
-  padding: 10px ; 
- 
+.acesso:after {
+    clear: both;
 }
-input[type="password"]{ 
-  padding: 10px ; 
- 
+
+.text-input {
+    font-weight: bolder;
+    margin: 10px;
+    font-size: 20px;
+}
+
+form h2{
+    text-align: center;
+}
+
+.field{
+    margin: 10px;
+}
+
+.field input{
+    padding: 10px;
+}
+
+.button {
+    position: relative;
+    background-color: #99d1f1;
+    border-color: #111111;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 20px;
+    padding: 10px 25px;
+    right: 1px;
 }

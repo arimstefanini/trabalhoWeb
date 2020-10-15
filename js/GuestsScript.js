@@ -6,6 +6,15 @@ const url = "https://hostel-app-back-end-api.herokuapp.com/customers"
 const controller = new ControllerGuests();
 controller.update()
 
+if(localStorage.removeItem("asNewGuest") === true){
+    const name = localStorage.removeItem("firstName")
+    const last = localStorage.removeItem("lastName")
+    const phone = localStorage.removeItem("phone")
+    const email = localStorage.removeItem("email")
+    const id = localStorage.removeItem("id")
+    localData.add(id, phone, name, last, email)
+}
+
 function request() {
     const httpRqst = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     httpRqst.open("GET", url, true)
