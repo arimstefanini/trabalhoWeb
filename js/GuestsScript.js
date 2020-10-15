@@ -81,6 +81,7 @@ request_PromisesEdition()
 //chamada com async/await
 request_AsyncAwaitTurboHDPlusEXAlphaHDRemix()
 
+//variável para testes (confira integridade do JSON acesando esta variável no terminal)
 var fetchedJson
 httpPromise(url)
 .then((json)=>{fetchedJson=json})
