@@ -74,7 +74,7 @@ ul {
 }
 
 /* Tabela */
-.up-table {
+.on-table {
     margin-top: 10px;
     width: 100%;
     float: left;
@@ -128,7 +128,7 @@ table thead {
     border-right: 5px solid transparent;
 }
 
-.up {
+.on {
     margin-bottom: 2px;
     border-bottom: 10px solid #C0C0C0;
 }
@@ -165,7 +165,7 @@ table thead {
     background-color: #F2F2F2;
 }
 
-.pair {
+.even {
     background-color: white;
 }
 

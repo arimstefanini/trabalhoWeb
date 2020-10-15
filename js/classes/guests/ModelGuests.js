@@ -1,20 +1,25 @@
+import localData from "../LocalDatabase.js";
+
 export default class ModelGuests {
 
-    page = 1
-    number = 10
-    filtered = false
-    maxButtons = 5
+    #page = 1
+    #number = 10
+    #filtered = false
+    #maxButtons = 5
 
-    fieldOrder = "id"
-    direction = 1
+    #fieldOrder = "id"
+    #direction = 1
 
-    guests = []
-    base
+    #guests = []
+    #observer
 
-    constructor(base) {
-        this.base = base
+    constructor(oberser) {
+        this.#observer = oberser
+        localData.setObserver(this)
         this.rebase()
     }
+
+    rebase = () => this.#guests = localData.clone()
 
     numberPages = () => Math.max(1, Math.ceil(this.size() / this.getNumber()));
 
@@ -22,108 +27,70 @@ export default class ModelGuests {
 
     indexEnd = () => Math.min(this.indexStart() + this.getNumber(), this.size()) - 1;
 
+    firstButton = () => Math.max(1, (this.getPage() + Math.trunc(this.#maxButtons / 2) < this.numberPages()) ?
+        this.getPage() - Math.trunc(this.#maxButtons / 2) : this.numberPages() - this.#maxButtons + 1);
+
+    lastButton = () => Math.min(this.numberPages(), this.firstButton() + this.#maxButtons - 1);
+
     filter(subValue) {
         this.setFiltered(subValue !== "")
-        this.guests = (this.getFiltered()) ? this.guests.filter((guest) => guest.includes(subValue)) : this.guests;
+        this.#guests = (this.getFiltered()) ? this.#guests.filter((guest) => guest.includes(subValue)) : this.#guests;
     }
 
-    order() {
-        this.guests.sort((a, b) => a.compare(this.getOrder(), b) * this.getOrderDirection())
-    }
+    order = () => this.#guests.sort((a, b) => a.compare(this.getOrder(), b) * this.getOrderDirection())
 
     currentGuests() {
         let regress = []
         const start = this.indexStart()
         const end = this.indexEnd()
         for (let i = start; i <= end; i++) {
-            regress.push(this.guests[i])
+            regress.push(this.#guests[i])
         }
         return regress
     }
 
-    size() {
-        return this.guests.length
+    #notify = () => this.#observer.update()
+
+    update() {
+        this.rebase()
+        this.order()
+        this.#notify()
     }
 
-    baseSize() {
-        return this.base.size()
-    }
+    size = () => this.#guests.length;
 
-    rebase() {
-        this.guests = this.base.clone()
-    }
+    baseSize = () => localData.size();
 
-    firstButton() {
-        return Math.max(1,
-            (this.getPage() + Math.trunc(this.maxButtons / 2) < this.numberPages()) ?
-                this.getPage() - Math.trunc(this.maxButtons / 2) :
-                this.numberPages() - this.maxButtons + 1)
-    }
+    isFirstPage = () => this.getPage() === 1;
 
-    lastButton() {
-        return Math.min(this.numberPages(), this.firstButton() + this.maxButtons - 1)
-    }
+    isLastPage = () => this.getPage() === this.numberPages();
 
-    isFirstPage() {
-        return this.getPage() === 1
-    }
+    getPage = () => this.#page;
 
-    isLastPage() {
-        return this.getPage() === this.numberPages()
-    }
+    setPage = page => this.#page = page < 0 ? 1 : this.#page = page > this.numberPages() ? this.numberPages() : page;
 
-    getPage() {
-        return this.page
-    }
+    updatePage = () => this.setPage(this.getPage())
 
-    setPage(page) {
-        if(page < 0){
-            this.page = 1
-        }else if(page > this.numberPages()){
-            this.page = this.numberPages()
-        }else{
-            this.page = page
-        }
-    }
+    getNumber = () => this.#number;
 
-    updatePage(){
-        this.setPage(this.getPage())
-    }
+    setNumber = number => this.#number = number
 
-    getNumber() {
-        return this.number
-    }
+    getOrder = () => this.#fieldOrder;
 
-    setNumber(number) {
-        this.number = number
-    }
+    setOrder = order => this.#fieldOrder =
+        order === "id" ||
+        order === "phone" ||
+        order === "firstName" ||
+        order === "lastName" ||
+        order === "email" ? order : this.#fieldOrder
 
-    getOrder() {
-        return this.fieldOrder
-    }
+    getOrderDirection = () => this.#direction;
 
-    setOrder(order) {
-        this.fieldOrder = (order === "id" ||
-            order === "phone" ||
-            order === "firstName" ||
-            order === "lastName" ||
-            order === "email") ? order : this.fieldOrder
-    }
+    setOrderDirection = direction => this.#direction = (direction === 1 || direction === -1) ? direction : this.#direction;
 
-    setOrderDirection(direction) {
-        this.direction = (direction === 1 || direction === -1) ? direction : this.direction;
-    }
+    getFiltered = () => this.#filtered;
 
-    getOrderDirection() {
-        return this.direction
-    }
+    setFiltered = filtered => this.#filtered = filtered
 
-    getFiltered() {
-        return this.filtered
-    }
-
-    setFiltered(filtered) {
-        this.filtered = filtered
-    }
 }
 
