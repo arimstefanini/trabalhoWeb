@@ -2,7 +2,7 @@ import ControllerGuests from "./classes/guests/ControllerGuests.js"
 import localData from "./classes/LocalDatabase.js";
 
 const url = "https://hostel-app-back-end-api.herokuapp.com/customers"
-
+//const url = "guests.json"
 const controller = new ControllerGuests();
 controller.update()
 
@@ -27,7 +27,38 @@ function request() {
     httpRqst.send()
 }
 
-request()
+//pedido XMLHttpRequest encapsulado em estrutura de tarefa assíncrona Promise.
+//retorna uma Promessa de que um pedido HTTP para uma dada URL foi finalizado.
+//esta promessas podem então ser encadeadas uma com a outra
+function httpPromise(addr){
+    return new Promise(function(success, failure){
+    const request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    request.open("GET", addr, true)
+    request.onreadystatechange = (httpRqst) => {
+        if (httpRqst.readyState === 4 && httpRqst.status === 200) {
+              success(JSON.parse(httpRqst.responseText)) 
+            } 
+        
+        else{
+            failure("XML/HTTP request failed.");
+        }
+    }
+    request.send()
+    })
+}
+
+function request_PromisesEdition(){
+    httpPromise(url)
+        .then((json) => localData.addAll(json))
+        .then(() => console.log("JSON added via promisses."))
+        .catch((error) => console.log(error))
+}
+
+
+//request()
+request_PromisesEdition()
+
+
 
 //função para teste -----------------------
 localData.addAll(getLocaleJson())
