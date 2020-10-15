@@ -19,7 +19,11 @@ if(localStorage.getItem("asNewGuest") === "true"){
 function request() {
     const httpRqst = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     httpRqst.open("GET", url, true)
-    httpRqst.onreadystatechange = (httpRqst) => { if (httpRqst.readyState === 4 && httpRqst.status === 200) { localData.addAll(JSON.parse(httpRqst.responseText)) } }
+    httpRqst.onreadystatechange = (httpRqst) => {
+        if (httpRqst.readyState === 4 && httpRqst.status === 200) {
+              localData.addAll(JSON.parse(httpRqst.responseText)) 
+            } 
+        }
     httpRqst.send()
 }
 
