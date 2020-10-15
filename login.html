@@ -5,90 +5,77 @@
 -->
 <!doctype html>
 <!-- linguagem do site -->
-<html long='en'>
-	<head>
-		<title>Sparkling Water Hostel Application</title>
-		<!--utf8 padrao mundial para caracter de linguagem pode colocar outras linguas no mesmo documento-->
-		<meta charset="utf-8" />
-		<!-- meta de visualização e dispositivo-->
-		<meta nome="viewport" content="width-device-width, initial-scale-1.0"/>
-		<meta http-equiv="X-UA-Conpatible" content="ie=edge"/>
-		<!--meta decription é aquele q aparece em ferramenta de busca como o google-->
-        <meta name="author" content="Ariela S., Felipe C., Lucas S., Rodrigo S.">
-		<meta name="description" content="Trabalho UNIFAL-MG, curso Ciencia da Computacao, da matria Programacao Web, 
+<html lang='en'>
+<head>
+    <title>Sparkling Water Hostel Application</title>
+    <!--utf8 padrao mundial para caracter de linguagem pode colocar outras linguas no mesmo documento-->
+    <meta charset="utf-8"/>
+    <!-- meta de visualização e dispositivo-->
+    <meta nome="viewport" content="width-device-width, initial-scale-1.0"/>
+    <meta http-equiv="X-UA-Conpatible" content="ie=edge"/>
+    <!--meta decription é aquele q aparece em ferramenta de busca como o google-->
+    <meta name="author" content="Ariela S., Felipe C., Lucas S., Rodrigo S.">
+    <meta name="description" content="Trabalho UNIFAL-MG, curso Ciencia da Computacao, da matria Programacao Web,
 										  com o professor Pagliares">
-        <!--existem varios tipos de meta que podem ser incluidos para informar o clinte-->
-        <meta property="og:description" content="Exemplo tela de login">
-        <meta property="og:title" content="Metadata; The HTML &lt;head&gt;, on MDN">
-		
-		<!-- css. para visualizar outros css é necessario trocar a href com o caminho do arquivo -->
-		<link rel="stylesheet" type="text/css" href="css/flexbox.css" >
-	
-	</head>
+    <!--existem varios tipos de meta que podem ser incluidos para informar o clinte-->
+    <meta property="og:description" content="Exemplo tela de login">
+    <meta property="og:title" content="Metadata; The HTML &lt;head&gt;, on MDN">
 
-    <body>
+    <!-- css. para visualizar outros css é necessario trocar a href com o caminho do arquivo -->
+    <link rel="stylesheet" type="text/css" href="css/gridlayout.css">
 
-        <!-- cabecalho da pagina -->
-		<header  class="container">
-			<!-- navegador -->
-			<nav class="menu" >
-				<!-- menu do lado esquerdo -->
-				<nav class="col col-item" id="menu-pages">
-					
-						<ul >
-							<li class="menu-item"><a href="index.html">Home</a></li>
-							<li class="menu-item"><a href="#">Customers</a></li>
-							<li class="menu-item"><a href="#">Rooms</a></li>
-							<li class="menu-item"><a href="#">Reservations</a></li>
-							<li class="menu-item" ><a href="#">Contact</a></li>
-						</ul>
-					
-				</nav>
-				<!-- menu do lado direito -->
-				<nav class="col col-login" id="menu-login" >
-					
-					<ul>
-						<li class="menu-item"><a href="login.html">Sign in</a></li>
-						
-					</ul>
-				
-				</nav>
-			</nav>
-		</header>
-        
-         <!-- conteudo -->
-         <div class="container">
-			<div class="acesso">
-                
-                <main-centro class="col-without">
-                    <form method="post" action="" >
-                        <h2>Hostel Sparkling Water - Login Employee</h2></br>
-                        <p >
-                            <label class="text-input" for="username">Username</label>
-                            
-                            <input id="username" name="username"
-                                    required="required" type="text" 
-                                        placeholder="Username" size=48 />
-                        </p></br>
-                        <p>
-                            <label class="text-input" for="password">Password &nbsp;</label>
-                            
-                            <input id="password" name="password" required="required" type="password" placeholder="Password" size=48  />
-                        </p>
+</head>
 
-                        <!-- Botao -->
-                        <p> <input class="button" type="submit" value="Sign in"/> </p>
+<body>
 
-                    </form>
-                </main-centro>
+<!-- cabecalho da pagina -->
+<header class="container">
+    <!-- navegador -->
+    <nav class="menu">
+        <!-- menu do lado esquerdo -->
+        <nav class="col col-item" id="menu-pages">
+            <ul>
+                <li class="menu-item"><a href="index.html">Home</a></li>
+                <li class="menu-item"><a href="#">Customers</a></li>
+                <li class="menu-item"><a href="#">Rooms</a></li>
+                <li class="menu-item"><a href="#">Reservations</a></li>
+                <li class="menu-item"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- menu do lado direito -->
+        <nav class="col col-login" id="menu-login">
+            <ul>
+                <li class="menu-item"><a href="login.html">Sign in</a></li>
+            </ul>
+        </nav>
+    </nav>
+</header>
 
-            </div>
-        </div>
-                
-        <!-- footer -->
-        <footer>
-            <p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>
-        </footer>
-    </body>
+<!-- conteudo -->
+<div class="container">
+    <div class="acesso">
+        <main-centro class="col-without">
+            <form method="post" action="guests.html">
+                <h2>Hostel Sparkling Water - Login Employee</h2>
+                <div class="field">
+                    <label class="text-input" for="username">Username</label>
+                    <input id="username" name="username" required="required" type="text" placeholder="Username" size=48/>
+                </div>
+                <div class="field">
+                    <label class="text-input" for="password">Password</label>
+                    <input id="password" name="password" required="required" type="password" placeholder="Password" size=48/>
+                </div>
+                <!-- Botao -->
+                <input class="button" type="submit" value="Sign in"/>
+            </form>
+        </main-centro>
+    </div>
+</div>
+
+<!-- footer -->
+<footer>
+    <p>Sparking Water Hostel | Sparking water main st 1000. Caxambu-<abbr title="Minas Gerais">MG</abbr></p>
+</footer>
+</body>
 
 </html>

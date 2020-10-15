@@ -18,6 +18,7 @@
 
     <!-- css. para visualizar outros css é necessario trocar a href com o caminho do arquivo -->
     <link rel="stylesheet" type="text/css" href="css/newguest.css">
+    <script defer src="js/NewGuestScript.js"></script>
 </head>
 <body>
 
@@ -47,9 +48,9 @@
     <header id="header-new-guest">
         <h1>Create guest</h1>
     </header>
-    <form id="new-guest" method="post">
-        <input class="info" type="text" id="firstName" required="required" placeholder="First Name"/>
-        <input class="info" type="text" id="lastName" required="required" placeholder="Last Name"/>
+    <form id="new-guest" method="GET" action="guests.html">
+        <input class="info" type="text" id="firstName" minlength="3" required="required" placeholder="First Name"/>
+        <input class="info" type="text" id="lastName" minlength="3" required="required" placeholder="Last Name"/>
 
         <input class="info" type="text" id="email" required="required" placeholder="Email Address"/>
         <input class="info" type="text" id="phone" required="required" placeholder="Phone Number"/>
@@ -59,7 +60,7 @@
         <input class="info" type="text" id="country" placeholder="Country"/>
         <input class="info" type="text" id="state" placeholder="State"/>
 
-        <button id="save " type="submit">Save</button>
+        <button id="save" type="submit">Save</button>
         <a id="regress-all-guests" href="guests.html">Return to all guests</a>
     </form>
 </main>

@@ -36,7 +36,7 @@ class Pager{
         if(this.observers!=null){
             var member;
             for(member of this.observers)
-                member.notify(this);
+                member.#notify(this);
         }
     }
 
@@ -150,10 +150,10 @@ this code does stuff... sorry, i couldn't come up with a fancy description.
 //wraps an XMLHttpRequest fetch operation in a Promise object.
 function XMLHttpPromiseWrapper(url){
     return new Promise(function(succ, fail){
-        var json;
+        let json;
         let request=new XMLHttpRequest();
         request.onreadystatechange=function(){
-            if(this.readyState==4 && this.status==200){
+            if(this.readyState===4 && this.status===200){
                 json=JSON.parse(this.responseText);
                 succ(json);
             }
@@ -175,7 +175,7 @@ function makePagerWithCallbacks(target, url,lb,rb){
     //and build the paged table from it.
     let request= new XMLHttpRequest();
     request.onreadystatechange=function(){
-        if(this.readyState==4 && this.status ==200){
+        if(this.readyState===4 && this.status ===200){
             externalOBJ=JSON.parse(this.responseText);
             thePager=new Pager(target, externalOBJ);
             //point the onclick attributes of left-button and right-button
@@ -240,7 +240,7 @@ let pb=document.getElementById("pageSelector");
 let url="https://hostel-app-back-end-api.herokuapp.com/customers";
 //makePagerWithCallbacks(pager,url,lb,rb);
 
-var thePager=makePagerWithAsync(pager,url,lb,rb,pb);
+let thePager=makePagerWithAsync(pager,url,lb,rb,pb);
 
 //makePagerWithPromises(pager,url,lb,rb);
 

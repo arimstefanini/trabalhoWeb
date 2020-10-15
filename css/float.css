@@ -173,7 +173,14 @@ form {
     font-weight: bolder;
     margin: 10px;
     font-size: 20px;
+}
 
+.field {
+    margin: 10px;
+}
+
+.field input {
+    padding: 10px;
 }
 
 .button {
@@ -185,14 +192,4 @@ form {
     margin: 20px;
     padding: 10px 25px;
     right: 190px;
-}
-
-input[type="text"] {
-    padding: 10px;
-
-}
-
-input[type="password"] {
-    padding: 10px;
-
 }
