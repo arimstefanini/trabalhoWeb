@@ -48,7 +48,7 @@
     <header id="header-new-guest">
         <h1>Create guest</h1>
     </header>
-    <form id="new-guest" method="post" action="">
+    <form id="new-guest" method="GET" action="guests.html">
         <input class="info" type="text" id="firstName" minlength="3" required="required" placeholder="First Name"/>
         <input class="info" type="text" id="lastName" minlength="3" required="required" placeholder="Last Name"/>
 
@@ -60,7 +60,7 @@
         <input class="info" type="text" id="country" placeholder="Country"/>
         <input class="info" type="text" id="state" placeholder="State"/>
 
-        <button id="save " onclick="submit()" type="submit">Save</button>
+        <button id="save" type="submit">Save</button>
         <a id="regress-all-guests" href="guests.html">Return to all guests</a>
     </form>
 </main>

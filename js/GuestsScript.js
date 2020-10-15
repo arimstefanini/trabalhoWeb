@@ -6,13 +6,14 @@ const url = "https://hostel-app-back-end-api.herokuapp.com/customers"
 const controller = new ControllerGuests();
 controller.update()
 
-if(localStorage.removeItem("asNewGuest") === true){
-    const name = localStorage.removeItem("firstName")
-    const last = localStorage.removeItem("lastName")
-    const phone = localStorage.removeItem("phone")
-    const email = localStorage.removeItem("email")
-    const id = localStorage.removeItem("id")
+if(localStorage.getItem("asNewGuest") === "true"){
+    const name = localStorage.getItem("firstName")
+    const last = localStorage.getItem("lastName")
+    const phone = localStorage.getItem("phone")
+    const email = localStorage.getItem("email")
+    const id = Number(localStorage.getItem("id"))
     localData.add(id, phone, name, last, email)
+    localStorage.clear()
 }
 
 function request() {
@@ -25,7 +26,7 @@ function request() {
 request()
 
 //função para teste -----------------------
-//localData.addAll(getLocaleJson())
+localData.addAll(getLocaleJson())
 function getLocaleJson() {
     return [{
         "id": 1,
