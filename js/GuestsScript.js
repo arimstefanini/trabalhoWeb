@@ -1,8 +1,8 @@
 import ControllerGuests from "./classes/guests/ControllerGuests.js"
 import localData from "./classes/LocalDatabase.js";
 
-const url = "https://hostel-app-back-end-api.herokuapp.com/customers"
-
+//const url = "https://hostel-app-back-end-api.herokuapp.com/customers"
+const url = "customers.json"
 const controller = new ControllerGuests();
 controller.update()
 
@@ -19,14 +19,76 @@ if(localStorage.getItem("asNewGuest") === "true"){
 function request() {
     const httpRqst = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     httpRqst.open("GET", url, true)
-    httpRqst.onreadystatechange = (httpRqst) => { if (httpRqst.readyState === 4 && httpRqst.status === 200) { localData.addAll(JSON.parse(httpRqst.responseText)) } }
+    httpRqst.onreadystatechange = (httpRqst) => {
+        if (httpRqst.readyState === 4 && httpRqst.status === 200) {
+              localData.addAll(JSON.parse(httpRqst.responseText)) 
+            } 
+        }
     httpRqst.send()
 }
 
-request()
+//pedido XMLHttpRequest encapsulado em estrutura de tarefa assíncrona Promise.
+//retorna uma Promessa de que um pedido HTTP para uma dada URL foi finalizado.
+//esta promessas podem então ser encadeadas uma com a outra
+function httpPromise(addr){
+    return new Promise(function(success, failure){
+    let http = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    http.open("GET", addr, true)
+    http.onreadystatechange = function(){
+        if (this.readyState === 4 && this.status === 200) {
+              success(JSON.parse(this.responseText)) 
+            } 
+    }
+    http.send()
+    })
+}
+
+//agendar busca HTTP com promessa;
+//agendar inseção em base de dados local e mensagem do terminal para depois da busca HTTP
+function request_PromisesEdition(){
+    return httpPromise(url)
+        .then((json) => localData.addAll(json))
+        .then(() => console.log("JSON added via promises."))
+        .catch((error) => {console.log("Error in Promises Request: \n\t"+error)})
+}
+
+//função assíncrona: *aguardar* o fim de uma busca HTTP;
+//passar resultado para base de dados local;
+//agendar mensagem no terminal para depois da busca
+async function request_AsyncAwaitTurboHDPlusEXAlphaHDRemix(){
+    try{
+        let thePromise=httpPromise(url)
+        let json = await thePromise
+        localData.addAll(json)
+        //como a função aguarda o fim da promessa 'thePromise', chamadas .then()
+        //após a mesma causam ação imediata.
+        let results=thePromise.then(()=>{console.log("JSON added via async/await")}) 
+    }
+    catch(err){
+        console.log("error in Async-Await HTTP request:\n\t"+err)
+    }
+}
+
+//chamada com callback
+//request()
+
+//chamada com Promises
+/*
+request_PromisesEdition()
+    .catch((err)=>{console.log("error in Promise HTTP Request: \n\t"+err)})
+*/
+
+//chamada com async/await
+request_AsyncAwaitTurboHDPlusEXAlphaHDRemix()
+
+//variável para testes (confira integridade do JSON acesando esta variável no terminal)
+var fetchedJson
+httpPromise(url)
+.then((json)=>{fetchedJson=json})
+
 
 //função para teste -----------------------
-localData.addAll(getLocaleJson())
+//localData.addAll(getLocaleJson())
 function getLocaleJson() {
     return [{
         "id": 1,
