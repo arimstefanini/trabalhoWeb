@@ -2,7 +2,7 @@ import ControllerGuests from "./classes/guests/ControllerGuests.js"
 import localData from "./classes/LocalDatabase.js";
 
 //const url = "https://hostel-app-back-end-api.herokuapp.com/customers"
-const url = "customers.json"
+const url = "https://cors-anywhere.herokuapp.com/https://hostel-app-back-end-api.herokuapp.com/customers"
 const controller = new ControllerGuests();
 controller.update()
 
